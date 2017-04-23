@@ -1,0 +1,99 @@
+\hypertarget{classBlockStatement}{
+\section{BlockStatement Class Reference}
+\label{classBlockStatement}\index{BlockStatement@{BlockStatement}}
+}
+
+
+This class represents a TinyJave block statement; local variables are not represented within a \hyperlink{classBlockStatement}{BlockStatement}, but with a \hyperlink{classMethodDeclaration}{MethodDeclaration}.  
+
+
+{\ttfamily \#include $<$BlockStmt.h$>$}Inheritance diagram for BlockStatement::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classBlockStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBlockStatement_a7d28cb688a765ca809bc55aa75e0b245}{BlockStatement} (int lno)
+\item 
+std::vector$<$ \hyperlink{classStatement}{Statement} $\ast$ $>$ $\ast$ \hyperlink{classBlockStatement_a049f6ad899e8480dd3b55bab8f442928}{getStatements} ()
+\item 
+void \hyperlink{classBlockStatement_adbd315994e8319333c0f7cd22681ec31}{addStatement} (\hyperlink{classStatement}{Statement} $\ast$stmt)
+\item 
+void \hyperlink{classBlockStatement_a36f2db846cf7f7a559e8b19b5e3d5c01}{prependStatement} (\hyperlink{classStatement}{Statement} $\ast$stmt)
+\item 
+void \hyperlink{classBlockStatement_a20df05e7536e375226639b483e8c4732}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJave block statement; local variables are not represented within a \hyperlink{classBlockStatement}{BlockStatement}, but with a \hyperlink{classMethodDeclaration}{MethodDeclaration}. A block statement is a sequence of statements represented as a std::vector of \hyperlink{classStatement}{Statement} nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBlockStatement_a7d28cb688a765ca809bc55aa75e0b245}{
+\index{BlockStatement@{BlockStatement}!BlockStatement@{BlockStatement}}
+\index{BlockStatement@{BlockStatement}!BlockStatement@{BlockStatement}}
+\subsubsection[{BlockStatement}]{\setlength{\rightskip}{0pt plus 5cm}BlockStatement::BlockStatement (int {\em lno})}}
+\label{classBlockStatement_a7d28cb688a765ca809bc55aa75e0b245}
+Create a new block statement node.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]is a source line number (should be the beginning of the block). \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBlockStatement_a20df05e7536e375226639b483e8c4732}{
+\index{BlockStatement@{BlockStatement}!accept@{accept}}
+\index{accept@{accept}!BlockStatement@{BlockStatement}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void BlockStatement::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classBlockStatement_a20df05e7536e375226639b483e8c4732}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classBlockStatement_adbd315994e8319333c0f7cd22681ec31}{
+\index{BlockStatement@{BlockStatement}!addStatement@{addStatement}}
+\index{addStatement@{addStatement}!BlockStatement@{BlockStatement}}
+\subsubsection[{addStatement}]{\setlength{\rightskip}{0pt plus 5cm}void BlockStatement::addStatement ({\bf Statement} $\ast$ {\em stmt})}}
+\label{classBlockStatement_adbd315994e8319333c0f7cd22681ec31}
+Add a statement to this block statement at the end.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em stmt}]a \hyperlink{classStatement}{Statement} to be aded as the last in sequence. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+\hypertarget{classBlockStatement_a049f6ad899e8480dd3b55bab8f442928}{
+\index{BlockStatement@{BlockStatement}!getStatements@{getStatements}}
+\index{getStatements@{getStatements}!BlockStatement@{BlockStatement}}
+\subsubsection[{getStatements}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Statement} $\ast$$>$$\ast$ BlockStatement::getStatements ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classBlockStatement_a049f6ad899e8480dd3b55bab8f442928}
+Return the statements of this block.
+
+\begin{DoxyReturn}{Returns}
+a pointer to the std::vector with the \hyperlink{classStatement}{Statement} nodes 
+\end{DoxyReturn}
+\hypertarget{classBlockStatement_a36f2db846cf7f7a559e8b19b5e3d5c01}{
+\index{BlockStatement@{BlockStatement}!prependStatement@{prependStatement}}
+\index{prependStatement@{prependStatement}!BlockStatement@{BlockStatement}}
+\subsubsection[{prependStatement}]{\setlength{\rightskip}{0pt plus 5cm}void BlockStatement::prependStatement ({\bf Statement} $\ast$ {\em stmt})}}
+\label{classBlockStatement_a36f2db846cf7f7a559e8b19b5e3d5c01}
+Add another statement to this block statement in the front.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em stmt}]a \hyperlink{classStatement}{Statement} to be aded as the first in sequence. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BlockStmt.h\item 
+BlockStmt.cpp\end{DoxyCompactItemize}

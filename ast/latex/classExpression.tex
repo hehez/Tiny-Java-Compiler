@@ -1,0 +1,88 @@
+\hypertarget{classExpression}{
+\section{Expression Class Reference}
+\label{classExpression}\index{Expression@{Expression}}
+}
+
+
+This is the parent of all expression Abstract Syntax Tree nodes.  
+
+
+{\ttfamily \#include $<$Expression.h$>$}Inheritance diagram for Expression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.64384cm]{classExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExpression_afcf87716bf0abfe8d414c92529e1564a}{Expression} ()
+\item 
+\hyperlink{classExpression_a3b3e124dd46ae70e1aae195089e839ab}{Expression} (int tp)
+\item 
+int \hyperlink{classExpression_add42721451cd946ac4e02ced146b95b7}{getType} ()
+\item 
+void \hyperlink{classExpression_ac2a2e67e764dd3ed9733b9cfd3e27f26}{setType} (int tp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the parent of all expression Abstract Syntax Tree nodes. This class will not have direct instances. Each \hyperlink{classExpression}{Expression} has a type, represented as an integer value, as defined in the \hyperlink{classAstNode}{AstNode} class.
+
+The \hyperlink{classExpression}{Expression} class serves as the common parent class of:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{classReferenceExpression}{ReferenceExpression}
+\item \hyperlink{classLiteralExpression}{LiteralExpression}
+\item \hyperlink{classNewExpression}{NewExpression}
+\item \hyperlink{classMethodCallExpression}{MethodCallExpression}
+\item \hyperlink{classCastExpression}{CastExpression}
+\item \hyperlink{classUnaryExpression}{UnaryExpression}, and
+\item \hyperlink{classBinaryExpression}{BinaryExpression} 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExpression_afcf87716bf0abfe8d414c92529e1564a}{
+\index{Expression@{Expression}!Expression@{Expression}}
+\index{Expression@{Expression}!Expression@{Expression}}
+\subsubsection[{Expression}]{\setlength{\rightskip}{0pt plus 5cm}Expression::Expression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classExpression_afcf87716bf0abfe8d414c92529e1564a}
+Create a new \hyperlink{classExpression}{Expression} object. The type will be set to TINT. \hypertarget{classExpression_a3b3e124dd46ae70e1aae195089e839ab}{
+\index{Expression@{Expression}!Expression@{Expression}}
+\index{Expression@{Expression}!Expression@{Expression}}
+\subsubsection[{Expression}]{\setlength{\rightskip}{0pt plus 5cm}Expression::Expression (int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classExpression_a3b3e124dd46ae70e1aae195089e839ab}
+Create a new \hyperlink{classExpression}{Expression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]the type of the \hyperlink{classExpression}{Expression}. It must be an integer value, as defined in the \hyperlink{classAstNode}{AstNode} class. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExpression_add42721451cd946ac4e02ced146b95b7}{
+\index{Expression@{Expression}!getType@{getType}}
+\index{getType@{getType}!Expression@{Expression}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}int Expression::getType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classExpression_add42721451cd946ac4e02ced146b95b7}
+Return the type of this \hyperlink{classExpression}{Expression} node.
+
+\begin{DoxyReturn}{Returns}
+an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classExpression_ac2a2e67e764dd3ed9733b9cfd3e27f26}{
+\index{Expression@{Expression}!setType@{setType}}
+\index{setType@{setType}!Expression@{Expression}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void Expression::setType (int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classExpression_ac2a2e67e764dd3ed9733b9cfd3e27f26}
+Set the type of this \hyperlink{classExpression}{Expression} node.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Expression.h\end{DoxyCompactItemize}

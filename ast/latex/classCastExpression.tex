@@ -1,0 +1,115 @@
+\hypertarget{classCastExpression}{
+\section{CastExpression Class Reference}
+\label{classCastExpression}\index{CastExpression@{CastExpression}}
+}
+
+
+This class represents a TinyJava type cast expression.  
+
+
+{\ttfamily \#include $<$CastExpression.h$>$}Inheritance diagram for CastExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCastExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCastExpression_a1c5bdbe92eabf17c09577c39937f4ff0}{CastExpression} (int lno, int castToType, \hyperlink{classExpression}{Expression} $\ast$arg)
+\item 
+int \hyperlink{classCastExpression_aa6ba133577fc9296450cb88410a24853}{getCastToType} ()
+\item 
+void \hyperlink{classCastExpression_ae0d08e3b57a33740d1d85f283ed755ab}{setCastToType} (int ct)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classCastExpression_ac35b327f25747795273b7bf991c77eef}{getOperand} ()
+\item 
+void \hyperlink{classCastExpression_ac24a64d42327406feeee20ef0b641c6b}{setOperand} (\hyperlink{classExpression}{Expression} $\ast$arg)
+\item 
+void \hyperlink{classCastExpression_af98e34f83dce5fec6d21f4baf4679dea}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava type cast expression. A cast expression is represented by:
+\begin{DoxyItemize}
+\item the resulting type (an integer, as defined in the \hyperlink{classAstNode}{AstNode} class)
+\item the \hyperlink{classExpression}{Expression} whose result should be type cast. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCastExpression_a1c5bdbe92eabf17c09577c39937f4ff0}{
+\index{CastExpression@{CastExpression}!CastExpression@{CastExpression}}
+\index{CastExpression@{CastExpression}!CastExpression@{CastExpression}}
+\subsubsection[{CastExpression}]{\setlength{\rightskip}{0pt plus 5cm}CastExpression::CastExpression (int {\em lno}, \/  int {\em castToType}, \/  {\bf Expression} $\ast$ {\em arg})}}
+\label{classCastExpression_a1c5bdbe92eabf17c09577c39937f4ff0}
+Create a new \hyperlink{classCastExpression}{CastExpression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the type cast \item[{\em castToType}]the resulting type (as defined in the \hyperlink{classAstNode}{AstNode} class) \item[{\em arg}]the argument expression to be type cast. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the \hyperlink{classExpression}{Expression} argument is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCastExpression_af98e34f83dce5fec6d21f4baf4679dea}{
+\index{CastExpression@{CastExpression}!accept@{accept}}
+\index{accept@{accept}!CastExpression@{CastExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void CastExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classCastExpression_af98e34f83dce5fec6d21f4baf4679dea}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classCastExpression_aa6ba133577fc9296450cb88410a24853}{
+\index{CastExpression@{CastExpression}!getCastToType@{getCastToType}}
+\index{getCastToType@{getCastToType}!CastExpression@{CastExpression}}
+\subsubsection[{getCastToType}]{\setlength{\rightskip}{0pt plus 5cm}int CastExpression::getCastToType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCastExpression_aa6ba133577fc9296450cb88410a24853}
+Return the type of the tape cast expression.
+
+\begin{DoxyReturn}{Returns}
+int value representing the type (as defined in the \hyperlink{classAstNode}{AstNode} class) 
+\end{DoxyReturn}
+\hypertarget{classCastExpression_ac35b327f25747795273b7bf991c77eef}{
+\index{CastExpression@{CastExpression}!getOperand@{getOperand}}
+\index{getOperand@{getOperand}!CastExpression@{CastExpression}}
+\subsubsection[{getOperand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ CastExpression::getOperand ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCastExpression_ac35b327f25747795273b7bf991c77eef}
+Return the operand expression.
+
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classExpression}{Expression} node representing the operand expression. 
+\end{DoxyReturn}
+\hypertarget{classCastExpression_ae0d08e3b57a33740d1d85f283ed755ab}{
+\index{CastExpression@{CastExpression}!setCastToType@{setCastToType}}
+\index{setCastToType@{setCastToType}!CastExpression@{CastExpression}}
+\subsubsection[{setCastToType}]{\setlength{\rightskip}{0pt plus 5cm}void CastExpression::setCastToType (int {\em ct})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCastExpression_ae0d08e3b57a33740d1d85f283ed755ab}
+Set the cast-\/to type.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ct}]cast to be typed to, as defined in the \hyperlink{classAstNode}{AstNode} class \end{DoxyParams}
+\hypertarget{classCastExpression_ac24a64d42327406feeee20ef0b641c6b}{
+\index{CastExpression@{CastExpression}!setOperand@{setOperand}}
+\index{setOperand@{setOperand}!CastExpression@{CastExpression}}
+\subsubsection[{setOperand}]{\setlength{\rightskip}{0pt plus 5cm}void CastExpression::setOperand ({\bf Expression} $\ast$ {\em arg})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classCastExpression_ac24a64d42327406feeee20ef0b641c6b}
+Set the operand expression.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em arg}]the new \hyperlink{classExpression}{Expression} node to be set as the operand. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the \hyperlink{classExpression}{Expression} argument is NULL \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CastExpression.h\item 
+CastExpression.cpp\end{DoxyCompactItemize}

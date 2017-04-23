@@ -1,0 +1,131 @@
+\hypertarget{classBinaryExpression}{
+\section{BinaryExpression Class Reference}
+\label{classBinaryExpression}\index{BinaryExpression@{BinaryExpression}}
+}
+
+
+This class represents a TinyJava binary expression involving a binary operator and 2 operand expressions.  
+
+
+{\ttfamily \#include $<$BinaryExpression.h$>$}Inheritance diagram for BinaryExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classBinaryExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBinaryExpression_af36e7f9f5222b93f030748384c631eb0}{BinaryExpression} (int lno, int op, \hyperlink{classExpression}{Expression} $\ast$left, \hyperlink{classExpression}{Expression} $\ast$right)
+\item 
+int \hyperlink{classBinaryExpression_af2d7644a8e57083fe9c550cf02900068}{getOperator} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classBinaryExpression_a0b8e6e09079d13b029c1fae785e0be01}{getLeftOperand} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classBinaryExpression_a49ee8f4a0fbed5656fbd0c37446e8f82}{getRightOperand} ()
+\item 
+void \hyperlink{classBinaryExpression_a2bf7fd38f96a775a988bfb6b7838d9bf}{setLeftOperand} (\hyperlink{classExpression}{Expression} $\ast$left)
+\item 
+void \hyperlink{classBinaryExpression_a78f08f420bbba62af7fc8693bde2fb76}{setRightOperand} (\hyperlink{classExpression}{Expression} $\ast$right)
+\item 
+void \hyperlink{classBinaryExpression_a2af7e73b6a90c216ef00b6297ce83da5}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava binary expression involving a binary operator and 2 operand expressions. A binary expression is represented by:
+\begin{DoxyItemize}
+\item an operator (which may be an arithmetic, relational, or equality operator)
+\item a left expression subtree representing the left operand, and
+\item a right expression subtree representing the right operand. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBinaryExpression_af36e7f9f5222b93f030748384c631eb0}{
+\index{BinaryExpression@{BinaryExpression}!BinaryExpression@{BinaryExpression}}
+\index{BinaryExpression@{BinaryExpression}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{BinaryExpression}]{\setlength{\rightskip}{0pt plus 5cm}BinaryExpression::BinaryExpression (int {\em lno}, \/  int {\em op}, \/  {\bf Expression} $\ast$ {\em left}, \/  {\bf Expression} $\ast$ {\em right})}}
+\label{classBinaryExpression_af36e7f9f5222b93f030748384c631eb0}
+Create a new \hyperlink{classBinaryExpression}{BinaryExpression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]source code line number with the binary expression. \item[{\em op}]an int value representing the operator; it should be one of the constants defined in the \hyperlink{classAstNode}{AstNode} class \item[{\em left}]an \hyperlink{classExpression}{Expression} representing the left operand \item[{\em right}]an \hyperlink{classExpression}{Expression} representing the right operand \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if either the left operand or the right operand is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBinaryExpression_a2af7e73b6a90c216ef00b6297ce83da5}{
+\index{BinaryExpression@{BinaryExpression}!accept@{accept}}
+\index{accept@{accept}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void BinaryExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classBinaryExpression_a2af7e73b6a90c216ef00b6297ce83da5}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classBinaryExpression_a0b8e6e09079d13b029c1fae785e0be01}{
+\index{BinaryExpression@{BinaryExpression}!getLeftOperand@{getLeftOperand}}
+\index{getLeftOperand@{getLeftOperand}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{getLeftOperand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ BinaryExpression::getLeftOperand ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classBinaryExpression_a0b8e6e09079d13b029c1fae785e0be01}
+Return the left operand of this binary expression.
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classExpression}{Expression} which is the left operand. 
+\end{DoxyReturn}
+\hypertarget{classBinaryExpression_af2d7644a8e57083fe9c550cf02900068}{
+\index{BinaryExpression@{BinaryExpression}!getOperator@{getOperator}}
+\index{getOperator@{getOperator}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{getOperator}]{\setlength{\rightskip}{0pt plus 5cm}int BinaryExpression::getOperator ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classBinaryExpression_af2d7644a8e57083fe9c550cf02900068}
+Return the operator of this binary expression.
+
+\begin{DoxyReturn}{Returns}
+operator as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classBinaryExpression_a49ee8f4a0fbed5656fbd0c37446e8f82}{
+\index{BinaryExpression@{BinaryExpression}!getRightOperand@{getRightOperand}}
+\index{getRightOperand@{getRightOperand}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{getRightOperand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ BinaryExpression::getRightOperand ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classBinaryExpression_a49ee8f4a0fbed5656fbd0c37446e8f82}
+Return the right operand of this binary expression.
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classExpression}{Expression} which is the right operand. 
+\end{DoxyReturn}
+\hypertarget{classBinaryExpression_a2bf7fd38f96a775a988bfb6b7838d9bf}{
+\index{BinaryExpression@{BinaryExpression}!setLeftOperand@{setLeftOperand}}
+\index{setLeftOperand@{setLeftOperand}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{setLeftOperand}]{\setlength{\rightskip}{0pt plus 5cm}void BinaryExpression::setLeftOperand ({\bf Expression} $\ast$ {\em left})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classBinaryExpression_a2bf7fd38f96a775a988bfb6b7838d9bf}
+Set the left operand expression of this binary expression.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em left}]the expression to be the new left operand. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+\hypertarget{classBinaryExpression_a78f08f420bbba62af7fc8693bde2fb76}{
+\index{BinaryExpression@{BinaryExpression}!setRightOperand@{setRightOperand}}
+\index{setRightOperand@{setRightOperand}!BinaryExpression@{BinaryExpression}}
+\subsubsection[{setRightOperand}]{\setlength{\rightskip}{0pt plus 5cm}void BinaryExpression::setRightOperand ({\bf Expression} $\ast$ {\em right})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classBinaryExpression_a78f08f420bbba62af7fc8693bde2fb76}
+Set the right operand expression of this binary expression.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em right}]the expression to be the new right operand. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BinaryExpression.h\item 
+BinaryExpression.cpp\end{DoxyCompactItemize}

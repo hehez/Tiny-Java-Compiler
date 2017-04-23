@@ -1,0 +1,225 @@
+\hypertarget{classMethodDeclaration}{
+\section{MethodDeclaration Class Reference}
+\label{classMethodDeclaration}\index{MethodDeclaration@{MethodDeclaration}}
+}
+
+
+This class represents a method declaration in a TinyJava class.  
+
+
+{\ttfamily \#include $<$MethodDeclaration.h$>$}Inheritance diagram for MethodDeclaration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classMethodDeclaration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMethodDeclaration_ae1ac6dc291290fc20f067360e275d3bb}{MethodDeclaration} (int lno, const char $\ast$nm, int rt)
+\item 
+const char $\ast$ \hyperlink{classMethodDeclaration_a792d1e64f2126f6daca537cb85e5ae6e}{getName} ()
+\item 
+bool \hyperlink{classMethodDeclaration_ac857d555077d6b35696470fd33f9315c}{isPublicMethod} ()
+\item 
+void \hyperlink{classMethodDeclaration_ad22630f0023935de4f76b0f399633ede}{setPublicMethod} (bool isPubliclyVisible)
+\item 
+int \hyperlink{classMethodDeclaration_ab26bfa7db28f171f2a25dacefd5141bf}{getRetType} ()
+\item 
+void \hyperlink{classMethodDeclaration_a82bce812810c881e6f1dca61b5b631ff}{setParameters} (std::vector$<$ \hyperlink{classDeclaration}{Declaration} $\ast$ $>$ $\ast$ps)
+\item 
+std::vector$<$ \hyperlink{classDeclaration}{Declaration} $\ast$ $>$ $\ast$ \hyperlink{classMethodDeclaration_ae57ec0b65b1edcaa7c6ddf5a08304886}{getParameters} ()
+\item 
+void \hyperlink{classMethodDeclaration_ad65f55276d3ea08cc0156a8a4eb3e035}{setVariables} (std::vector$<$ \hyperlink{classDeclaration}{Declaration} $\ast$ $>$ $\ast$vs)
+\item 
+std::vector$<$ \hyperlink{classDeclaration}{Declaration} $\ast$ $>$ $\ast$ \hyperlink{classMethodDeclaration_a4078ee50432bfa957007584cf6f3f260}{getVariables} ()
+\item 
+ENTRY $\ast$ \hyperlink{classMethodDeclaration_ab32ff62da9f19c145ad13f811b97b265}{getEntry} ()
+\item 
+void \hyperlink{classMethodDeclaration_aa786d4c52123cf501a85f2e3604f7cb6}{setEntry} (ENTRY $\ast$e)
+\item 
+\hyperlink{classStatement}{Statement} $\ast$ \hyperlink{classMethodDeclaration_a7c7b3d34df4197370caca80119f19c0f}{getBody} ()
+\item 
+void \hyperlink{classMethodDeclaration_a0ba428c0491f39c66a6b26d24077b56c}{setBody} (\hyperlink{classStatement}{Statement} $\ast$b)
+\item 
+void \hyperlink{classMethodDeclaration_af4989b6bfa1fdc87be33f4315aa54a7e}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a method declaration in a TinyJava class. A method declaration is represented by:
+\begin{DoxyItemize}
+\item the method name (a string)
+\item whether the method public or not
+\item the return type of the method (an integer value, as defined in the \hyperlink{classAstNode}{AstNode} class)
+\item formal parameters of the method (\hyperlink{classDeclaration}{Declaration} pointers)
+\item local variables of the method (\hyperlink{classDeclaration}{Declaration} pointers)
+\item body of the method (a pointer to a \hyperlink{classStatement}{Statement})
+\end{DoxyItemize}
+
+A pointer to the symbol table ENTRY for the method may also be included.
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMethodDeclaration_ae1ac6dc291290fc20f067360e275d3bb}{
+\index{MethodDeclaration@{MethodDeclaration}!MethodDeclaration@{MethodDeclaration}}
+\index{MethodDeclaration@{MethodDeclaration}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{MethodDeclaration}]{\setlength{\rightskip}{0pt plus 5cm}MethodDeclaration::MethodDeclaration (int {\em lno}, \/  const char $\ast$ {\em nm}, \/  int {\em rt})}}
+\label{classMethodDeclaration_ae1ac6dc291290fc20f067360e275d3bb}
+Create a new \hyperlink{classMethodDeclaration}{MethodDeclaration} object. The method body is set to NULL. The symbol table ENTRY pointer is set to NULL. No parameters or local variables are created.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the method declaration (should be the beginning of the method) \item[{\em nm}]a string representing the method name \item[{\em rt}]a integer value representing the return type, as defined in the \hyperlink{classAstNode}{AstNode} class \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the method name is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMethodDeclaration_af4989b6bfa1fdc87be33f4315aa54a7e}{
+\index{MethodDeclaration@{MethodDeclaration}!accept@{accept}}
+\index{accept@{accept}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void MethodDeclaration::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classMethodDeclaration_af4989b6bfa1fdc87be33f4315aa54a7e}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classMethodDeclaration_a7c7b3d34df4197370caca80119f19c0f}{
+\index{MethodDeclaration@{MethodDeclaration}!getBody@{getBody}}
+\index{getBody@{getBody}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{getBody}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Statement}$\ast$ MethodDeclaration::getBody ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_a7c7b3d34df4197370caca80119f19c0f}
+Return the body of this method
+
+\begin{DoxyReturn}{Returns}
+pointer to a \hyperlink{classStatement}{Statement} representing the body of the method 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_ab32ff62da9f19c145ad13f811b97b265}{
+\index{MethodDeclaration@{MethodDeclaration}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ MethodDeclaration::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_ab32ff62da9f19c145ad13f811b97b265}
+Return a pointer to the symbol table ENTRY representing this method declaration. This value may be undefined before the symbol table is created.
+
+\begin{DoxyReturn}{Returns}
+a pointer to the symbol table entry representing this method declaration. 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_a792d1e64f2126f6daca537cb85e5ae6e}{
+\index{MethodDeclaration@{MethodDeclaration}!getName@{getName}}
+\index{getName@{getName}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ MethodDeclaration::getName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_a792d1e64f2126f6daca537cb85e5ae6e}
+Return the method name.
+
+\begin{DoxyReturn}{Returns}
+string representing the method name. 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_ae57ec0b65b1edcaa7c6ddf5a08304886}{
+\index{MethodDeclaration@{MethodDeclaration}!getParameters@{getParameters}}
+\index{getParameters@{getParameters}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{getParameters}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Declaration} $\ast$$>$$\ast$ MethodDeclaration::getParameters ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_ae57ec0b65b1edcaa7c6ddf5a08304886}
+Return all formal parameters of this method.
+
+\begin{DoxyReturn}{Returns}
+a pointer to a std::vector with pointers referencing ParameterDeclarations of this method 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_ab26bfa7db28f171f2a25dacefd5141bf}{
+\index{MethodDeclaration@{MethodDeclaration}!getRetType@{getRetType}}
+\index{getRetType@{getRetType}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{getRetType}]{\setlength{\rightskip}{0pt plus 5cm}int MethodDeclaration::getRetType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_ab26bfa7db28f171f2a25dacefd5141bf}
+Return the type of this method declaration node.
+
+\begin{DoxyReturn}{Returns}
+an integer value representing the method return type, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_a4078ee50432bfa957007584cf6f3f260}{
+\index{MethodDeclaration@{MethodDeclaration}!getVariables@{getVariables}}
+\index{getVariables@{getVariables}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{getVariables}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Declaration} $\ast$$>$$\ast$ MethodDeclaration::getVariables ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_a4078ee50432bfa957007584cf6f3f260}
+Return all local variables of this method.
+
+\begin{DoxyReturn}{Returns}
+a pointer to a std::vector with pointers referencing VariableDeclarations of this method 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_ac857d555077d6b35696470fd33f9315c}{
+\index{MethodDeclaration@{MethodDeclaration}!isPublicMethod@{isPublicMethod}}
+\index{isPublicMethod@{isPublicMethod}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{isPublicMethod}]{\setlength{\rightskip}{0pt plus 5cm}bool MethodDeclaration::isPublicMethod ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_ac857d555077d6b35696470fd33f9315c}
+Is the method public?
+
+\begin{DoxyReturn}{Returns}
+a boolean value representing the method's public visibility status 
+\end{DoxyReturn}
+\hypertarget{classMethodDeclaration_a0ba428c0491f39c66a6b26d24077b56c}{
+\index{MethodDeclaration@{MethodDeclaration}!setBody@{setBody}}
+\index{setBody@{setBody}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{setBody}]{\setlength{\rightskip}{0pt plus 5cm}void MethodDeclaration::setBody ({\bf Statement} $\ast$ {\em b})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_a0ba428c0491f39c66a6b26d24077b56c}
+Set the body of thie method
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em b}]a \hyperlink{classStatement}{Statement} pointer representing the body of the method; must be a pointer to \hyperlink{classBlockStatement}{BlockStatement} \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument b is NULL or if it is not a \hyperlink{classBlockStatement}{BlockStatement} \end{DoxyExceptions}
+\hypertarget{classMethodDeclaration_aa786d4c52123cf501a85f2e3604f7cb6}{
+\index{MethodDeclaration@{MethodDeclaration}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void MethodDeclaration::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_aa786d4c52123cf501a85f2e3604f7cb6}
+Set the pointer to the symbol table entry representing this method declaration. This value will typically be set during the symbol table construction phase.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]the pointer to the symbol table entry representing this method declaration. \end{DoxyParams}
+\hypertarget{classMethodDeclaration_a82bce812810c881e6f1dca61b5b631ff}{
+\index{MethodDeclaration@{MethodDeclaration}!setParameters@{setParameters}}
+\index{setParameters@{setParameters}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{setParameters}]{\setlength{\rightskip}{0pt plus 5cm}void MethodDeclaration::setParameters (std::vector$<$ {\bf Declaration} $\ast$ $>$ $\ast$ {\em ps})}}
+\label{classMethodDeclaration_a82bce812810c881e6f1dca61b5b631ff}
+Set the formal parameters of this method declaration
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ps}]a pointer to a std::vector of \hyperlink{classParameterDeclaration}{ParameterDeclaration} pointers, each representing a formal parameter declaration \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if any of the \hyperlink{classDeclaration}{Declaration} pointers in the argument std::vector is NULL or is not a \hyperlink{classParameterDeclaration}{ParameterDeclaration} \end{DoxyExceptions}
+\hypertarget{classMethodDeclaration_ad22630f0023935de4f76b0f399633ede}{
+\index{MethodDeclaration@{MethodDeclaration}!setPublicMethod@{setPublicMethod}}
+\index{setPublicMethod@{setPublicMethod}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{setPublicMethod}]{\setlength{\rightskip}{0pt plus 5cm}void MethodDeclaration::setPublicMethod (bool {\em isPubliclyVisible})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodDeclaration_ad22630f0023935de4f76b0f399633ede}
+Set the public visibility status of this method
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em isPubliclyVisible}]the new public visibility status \end{DoxyParams}
+\hypertarget{classMethodDeclaration_ad65f55276d3ea08cc0156a8a4eb3e035}{
+\index{MethodDeclaration@{MethodDeclaration}!setVariables@{setVariables}}
+\index{setVariables@{setVariables}!MethodDeclaration@{MethodDeclaration}}
+\subsubsection[{setVariables}]{\setlength{\rightskip}{0pt plus 5cm}void MethodDeclaration::setVariables (std::vector$<$ {\bf Declaration} $\ast$ $>$ $\ast$ {\em vs})}}
+\label{classMethodDeclaration_ad65f55276d3ea08cc0156a8a4eb3e035}
+Set the local variables of this method declaration
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em vs}]a pointer to a std::vector of \hyperlink{classVariableDeclaration}{VariableDeclaration} pointers, each representing a local variable declaration \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if any of the \hyperlink{classDeclaration}{Declaration} pointers in the argument std::vector is NULL or is not a \hyperlink{classVariableDeclaration}{VariableDeclaration} \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MethodDeclaration.h\item 
+MethodDeclaration.cpp\end{DoxyCompactItemize}

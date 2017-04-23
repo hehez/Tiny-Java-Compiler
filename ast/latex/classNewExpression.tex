@@ -1,0 +1,102 @@
+\hypertarget{classNewExpression}{
+\section{NewExpression Class Reference}
+\label{classNewExpression}\index{NewExpression@{NewExpression}}
+}
+
+
+This class represents a TinyJava NEW expression (used for array creation).  
+
+
+{\ttfamily \#include $<$NewExpression.h$>$}Inheritance diagram for NewExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classNewExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNewExpression_a19c967d630d86b4ff25b95e589d3a84d}{NewExpression} (int lno, int tp, \hyperlink{classExpression}{Expression} $\ast$size)
+\item 
+int \hyperlink{classNewExpression_aa26ede4c3685e4cf1846eb62b9051355}{getBaseType} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classNewExpression_a86da8a128d8c401ba775cd997aa634fa}{getExpression} ()
+\item 
+void \hyperlink{classNewExpression_a187b0a20b76ebd542c84b43880ef9692}{setExpression} (\hyperlink{classExpression}{Expression} $\ast$arg)
+\item 
+void \hyperlink{classNewExpression_a4b5178e78150432ac58a08197204fa27}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava NEW expression (used for array creation). A \hyperlink{classNewExpression}{NewExpression} is represented by:
+\begin{DoxyItemize}
+\item the constructed type (i.e. array base type)
+\item an \hyperlink{classExpression}{Expression} representing the size of the array to be created 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNewExpression_a19c967d630d86b4ff25b95e589d3a84d}{
+\index{NewExpression@{NewExpression}!NewExpression@{NewExpression}}
+\index{NewExpression@{NewExpression}!NewExpression@{NewExpression}}
+\subsubsection[{NewExpression}]{\setlength{\rightskip}{0pt plus 5cm}NewExpression::NewExpression (int {\em lno}, \/  int {\em tp}, \/  {\bf Expression} $\ast$ {\em size})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNewExpression_a19c967d630d86b4ff25b95e589d3a84d}
+Create a new \hyperlink{classNewExpression}{NewExpression} object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source line number containing the new expression \item[{\em tp}]the type of the created value (array base type), as defined in the \hyperlink{classAstNode}{AstNode} class \item[{\em size}]a pointer to \hyperlink{classExpression}{Expression} representing the size of the new array \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the size \hyperlink{classExpression}{Expression} is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNewExpression_a4b5178e78150432ac58a08197204fa27}{
+\index{NewExpression@{NewExpression}!accept@{accept}}
+\index{accept@{accept}!NewExpression@{NewExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void NewExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classNewExpression_a4b5178e78150432ac58a08197204fa27}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classNewExpression_aa26ede4c3685e4cf1846eb62b9051355}{
+\index{NewExpression@{NewExpression}!getBaseType@{getBaseType}}
+\index{getBaseType@{getBaseType}!NewExpression@{NewExpression}}
+\subsubsection[{getBaseType}]{\setlength{\rightskip}{0pt plus 5cm}int NewExpression::getBaseType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNewExpression_aa26ede4c3685e4cf1846eb62b9051355}
+Return the type to be created (array base type)
+
+\begin{DoxyReturn}{Returns}
+an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classNewExpression_a86da8a128d8c401ba775cd997aa634fa}{
+\index{NewExpression@{NewExpression}!getExpression@{getExpression}}
+\index{getExpression@{getExpression}!NewExpression@{NewExpression}}
+\subsubsection[{getExpression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ NewExpression::getExpression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNewExpression_a86da8a128d8c401ba775cd997aa634fa}
+Return the size \hyperlink{classExpression}{Expression}
+
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classExpression}{Expression} representing the array size 
+\end{DoxyReturn}
+\hypertarget{classNewExpression_a187b0a20b76ebd542c84b43880ef9692}{
+\index{NewExpression@{NewExpression}!setExpression@{setExpression}}
+\index{setExpression@{setExpression}!NewExpression@{NewExpression}}
+\subsubsection[{setExpression}]{\setlength{\rightskip}{0pt plus 5cm}void NewExpression::setExpression ({\bf Expression} $\ast$ {\em arg})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNewExpression_a187b0a20b76ebd542c84b43880ef9692}
+Set the size \hyperlink{classExpression}{Expression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em arg}]is a pointer to an \hyperlink{classExpression}{Expression} representing the array size \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the arg \hyperlink{classExpression}{Expression} is NULL \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+NewExpression.h\end{DoxyCompactItemize}

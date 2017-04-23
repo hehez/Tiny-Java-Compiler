@@ -1,0 +1,419 @@
+\hypertarget{classAstNode}{
+\section{AstNode Class Reference}
+\label{classAstNode}\index{AstNode@{AstNode}}
+}
+
+
+This is the root of the Abstract Syntax Tree class hierarchy.  
+
+
+{\ttfamily \#include $<$AstNode.h$>$}Inheritance diagram for AstNode::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.39269cm]{classAstNode}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950}{AstNodeKind} \{ \par
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a74f05149a25fe61dabeb25520382c1c2}{DCLASS}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950af58ad2e4831b8c3c7789a3c4054642c5}{DFIELD}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950ad3b8425047b32cc74fa3688c2da95761}{DMETHOD}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a1dd054e6f23331982e648d40a3a010f5}{DPARAMETER}, 
+\par
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a63ec96e21ca1021019b7e5d2f11e71b1}{DVARIABLE}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a36765da53ef4678d5e619ffe0e85307c}{ELITERAL}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a60af566d801917b1682de26a9e0004fd}{ENAME}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950aab4b8cee1550e71c04537cce17c71edc}{ENEW}, 
+\par
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a4697428e167fee2f70f010c36dd3e9c8}{EUNARY}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a58ca86e25c2f6c444bf339818c1a9239}{EBINARY}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a1daa1362aa004cdefe437681ec66e299}{ECAST}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a3f693d520f9042b99bc39c5e11538812}{EMCALL}, 
+\par
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a07ad9af3faed1cd28726abe1ce7f2bdb}{SASSIGN}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950ab5481ab4de7d88b5004055a0c7fb8629}{SWHILE}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a8e42e06272e07bffadee68c4d393ddbe}{SFOR}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a927858fb9744799e4e35e9ba9c577047}{SIF}, 
+\par
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950aa831a911ca3a2eff7c1027846d133113}{SRETURN}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950af7cb46f572219dca20fb4d0ad7280ad6}{SBLOCK}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a5d5130e3c308a4e74a2b77ebd2766052}{SMCALL}, 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950a795546958814b99a16d59743f029eb55}{SEMPTY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950}{AstNodeKind} \hyperlink{classAstNode_ac18055137cc3544e330c42f0c41acf86}{getKind} ()
+\item 
+void \hyperlink{classAstNode_a1d7bf9b1d9cd668d155ddd86d22bc727}{setKind} (\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950}{AstNodeKind} newKind)
+\item 
+int \hyperlink{classAstNode_a93ce204950529a50b86813904e03dfd7}{getLineNo} ()
+\item 
+void \hyperlink{classAstNode_abe694eb81a2d9042c571ecc2ca8d38e8}{setLineNo} (int lno)
+\item 
+virtual void \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{classAstNode_a6b77773e4a27d8ca40bc1fce09d4764e}{type2string} (int tp)
+\item 
+static const char $\ast$ \hyperlink{classAstNode_abb3df00672c92269af102f415b9acf62}{operator2string} (int op)
+\item 
+static const char $\ast$ \hyperlink{classAstNode_a9579a36e66ca9449b8aac87f0bf8f832}{kind2string} (\hyperlink{classAstNode_a365f519b5e9e517edc83566bd1cfe950}{AstNodeKind} kind)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classAstNode_ac664e0864b9c856e947d5fde632eb5e7}{TVOID} = 0
+\item 
+static const int \hyperlink{classAstNode_a8568313f5d280773a446280c94d382f8}{TINT} = 1
+\item 
+static const int \hyperlink{classAstNode_abf470f775bd7a7bfc2c0610716054339}{TFLOAT} = 2
+\item 
+static const int \hyperlink{classAstNode_a71904f4c33eff3bb3a37fadda88f12c9}{TBOOL} = 3
+\item 
+static const int \hyperlink{classAstNode_a2245a2aec841592ecddf8f9497306a4b}{TSTRING} = 4
+\item 
+static const int \hyperlink{classAstNode_a7233043e1a9d95c3120a62ac66c89608}{TINTA} = 5
+\item 
+static const int \hyperlink{classAstNode_a9d01a6ac8a4a7a5b2d4a3ec8a7e93fa7}{TFLOATA} = 6
+\item 
+static const int \hyperlink{classAstNode_ae3a9310b89b8c86afe245cf88ab1369a}{TSTRINGA} = 7
+\item 
+static const int \hyperlink{classAstNode_ad84a595b7727d93d325664d5bf89c766}{TREF} = 8
+\item 
+static const int \hyperlink{classAstNode_af908b13b6954116a438f86ce595d5bfe}{ADDOP} = 0
+\item 
+static const int \hyperlink{classAstNode_a8d62c361a16d84b762172fac68650561}{SUBOP} = 1
+\item 
+static const int \hyperlink{classAstNode_af1564bffc1a770122ea56654f4439531}{MULOP} = 2
+\item 
+static const int \hyperlink{classAstNode_a3972892cd58f1c70c84366804bdfd371}{DIVOP} = 3
+\item 
+static const int \hyperlink{classAstNode_a9cb6a842a496aed85756aa779789ce77}{EQOP} = 4
+\item 
+static const int \hyperlink{classAstNode_a3347eacf3e38675c075a7ce1c4cb6e29}{NEOP} = 5
+\item 
+static const int \hyperlink{classAstNode_a1ddf9dbcce4b80d311e7080b8262b65b}{LTOP} = 6
+\item 
+static const int \hyperlink{classAstNode_a3103a273c9da38b092334c757ee19ace}{GTOP} = 7
+\item 
+static const int \hyperlink{classAstNode_ac62da8b0313271a74293826f586dd6ea}{LEOP} = 8
+\item 
+static const int \hyperlink{classAstNode_aeb92e9f6e1407ff0c945f220b3da9820}{GEOP} = 9
+\item 
+static const int \hyperlink{classAstNode_abf9092d925819312d2547c414b493c4f}{INCOP} = 10
+\item 
+static const int \hyperlink{classAstNode_a0a48e47b23689fb51c059cb48a007adc}{DECOP} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the root of the Abstract Syntax Tree class hierarchy. An \hyperlink{classAstNode}{AstNode} object represents an Abstract Syntax Tree (AST) Node. The \hyperlink{classAstNode}{AstNode} class hierarchy is subdivided into:
+\begin{DoxyItemize}
+\item declarations (subclasses of \hyperlink{classDeclaration}{Declaration}),
+\item expressions (subclasses of \hyperlink{classExpression}{Expression}), and
+\item statements (subclasses of \hyperlink{classStatement}{Statement}).
+\end{DoxyItemize}
+
+There are several types (kinds) of concrete AST nodes. More specifically, a node can be:
+\begin{DoxyItemize}
+\item a declaration node (a subclass of \hyperlink{classDeclaration}{Declaration}) of type: DCLASS, DMETHOD, DFIELD, DPARAMETER, DVARIABLE
+\item an expression node (a subclass of \hyperlink{classExpression}{Expression}) of type: ELITERAL, ENAME, EUNARY, EBINARY, ECAST, EMCALL,
+\item a statement node (a subclass of \hyperlink{classStatement}{Statement}) of type: SASSIGN, SWHILE, SIF, SRETURN, SBLOCK, SMCALL, SEMPTY 
+\end{DoxyItemize}
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950}{
+\index{AstNode@{AstNode}!AstNodeKind@{AstNodeKind}}
+\index{AstNodeKind@{AstNodeKind}!AstNode@{AstNode}}
+\subsubsection[{AstNodeKind}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf AstNode::AstNodeKind}}}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950}
+This enumeration type elements are used to represent the kinds of Abstract Syntax Tree nodes. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DCLASS@{DCLASS}!AstNode@{AstNode}}\index{AstNode@{AstNode}!DCLASS@{DCLASS}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a74f05149a25fe61dabeb25520382c1c2}{
+DCLASS}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a74f05149a25fe61dabeb25520382c1c2}
+}]a class declaration node \index{DFIELD@{DFIELD}!AstNode@{AstNode}}\index{AstNode@{AstNode}!DFIELD@{DFIELD}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950af58ad2e4831b8c3c7789a3c4054642c5}{
+DFIELD}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950af58ad2e4831b8c3c7789a3c4054642c5}
+}]a field declaration node \index{DMETHOD@{DMETHOD}!AstNode@{AstNode}}\index{AstNode@{AstNode}!DMETHOD@{DMETHOD}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950ad3b8425047b32cc74fa3688c2da95761}{
+DMETHOD}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950ad3b8425047b32cc74fa3688c2da95761}
+}]a method declaration node \index{DPARAMETER@{DPARAMETER}!AstNode@{AstNode}}\index{AstNode@{AstNode}!DPARAMETER@{DPARAMETER}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a1dd054e6f23331982e648d40a3a010f5}{
+DPARAMETER}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a1dd054e6f23331982e648d40a3a010f5}
+}]a parameter declaration node \index{DVARIABLE@{DVARIABLE}!AstNode@{AstNode}}\index{AstNode@{AstNode}!DVARIABLE@{DVARIABLE}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a63ec96e21ca1021019b7e5d2f11e71b1}{
+DVARIABLE}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a63ec96e21ca1021019b7e5d2f11e71b1}
+}]a variabale declaration node \index{ELITERAL@{ELITERAL}!AstNode@{AstNode}}\index{AstNode@{AstNode}!ELITERAL@{ELITERAL}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a36765da53ef4678d5e619ffe0e85307c}{
+ELITERAL}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a36765da53ef4678d5e619ffe0e85307c}
+}]a literal expression node \index{ENAME@{ENAME}!AstNode@{AstNode}}\index{AstNode@{AstNode}!ENAME@{ENAME}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a60af566d801917b1682de26a9e0004fd}{
+ENAME}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a60af566d801917b1682de26a9e0004fd}
+}]a name reference expression node (may be a vriable, parameter, or a field) \index{ENEW@{ENEW}!AstNode@{AstNode}}\index{AstNode@{AstNode}!ENEW@{ENEW}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950aab4b8cee1550e71c04537cce17c71edc}{
+ENEW}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950aab4b8cee1550e71c04537cce17c71edc}
+}]a NEW expression node (just for array construction) \index{EUNARY@{EUNARY}!AstNode@{AstNode}}\index{AstNode@{AstNode}!EUNARY@{EUNARY}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a4697428e167fee2f70f010c36dd3e9c8}{
+EUNARY}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a4697428e167fee2f70f010c36dd3e9c8}
+}]a unary expression node (may be prefix or postfix) \index{EBINARY@{EBINARY}!AstNode@{AstNode}}\index{AstNode@{AstNode}!EBINARY@{EBINARY}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a58ca86e25c2f6c444bf339818c1a9239}{
+EBINARY}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a58ca86e25c2f6c444bf339818c1a9239}
+}]a binary expression node \index{ECAST@{ECAST}!AstNode@{AstNode}}\index{AstNode@{AstNode}!ECAST@{ECAST}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a1daa1362aa004cdefe437681ec66e299}{
+ECAST}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a1daa1362aa004cdefe437681ec66e299}
+}]a type cast expression node \index{EMCALL@{EMCALL}!AstNode@{AstNode}}\index{AstNode@{AstNode}!EMCALL@{EMCALL}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a3f693d520f9042b99bc39c5e11538812}{
+EMCALL}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a3f693d520f9042b99bc39c5e11538812}
+}]a method call expression node \index{SASSIGN@{SASSIGN}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SASSIGN@{SASSIGN}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a07ad9af3faed1cd28726abe1ce7f2bdb}{
+SASSIGN}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a07ad9af3faed1cd28726abe1ce7f2bdb}
+}]an assignment statement node \index{SWHILE@{SWHILE}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SWHILE@{SWHILE}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950ab5481ab4de7d88b5004055a0c7fb8629}{
+SWHILE}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950ab5481ab4de7d88b5004055a0c7fb8629}
+}]a WHILE statement node \index{SFOR@{SFOR}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SFOR@{SFOR}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a8e42e06272e07bffadee68c4d393ddbe}{
+SFOR}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a8e42e06272e07bffadee68c4d393ddbe}
+}]a FOR statement node \index{SIF@{SIF}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SIF@{SIF}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a927858fb9744799e4e35e9ba9c577047}{
+SIF}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a927858fb9744799e4e35e9ba9c577047}
+}]an IF statement node \index{SRETURN@{SRETURN}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SRETURN@{SRETURN}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950aa831a911ca3a2eff7c1027846d133113}{
+SRETURN}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950aa831a911ca3a2eff7c1027846d133113}
+}]a return statement node \index{SBLOCK@{SBLOCK}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SBLOCK@{SBLOCK}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950af7cb46f572219dca20fb4d0ad7280ad6}{
+SBLOCK}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950af7cb46f572219dca20fb4d0ad7280ad6}
+}]a block statement node \index{SMCALL@{SMCALL}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SMCALL@{SMCALL}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a5d5130e3c308a4e74a2b77ebd2766052}{
+SMCALL}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a5d5130e3c308a4e74a2b77ebd2766052}
+}]a method call statement (a wrapper for a method call expression node) \index{SEMPTY@{SEMPTY}!AstNode@{AstNode}}\index{AstNode@{AstNode}!SEMPTY@{SEMPTY}}\item[{\em 
+\hypertarget{classAstNode_a365f519b5e9e517edc83566bd1cfe950a795546958814b99a16d59743f029eb55}{
+SEMPTY}
+\label{classAstNode_a365f519b5e9e517edc83566bd1cfe950a795546958814b99a16d59743f029eb55}
+}]an empty statement node \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{
+\index{AstNode@{AstNode}!accept@{accept}}
+\index{accept@{accept}!AstNode@{AstNode}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstNode::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implemented in \hyperlink{classAssignStatement_a178a2773781301e16eebfd3d420dc98d}{AssignStatement}, \hyperlink{classBinaryExpression_a2af7e73b6a90c216ef00b6297ce83da5}{BinaryExpression}, \hyperlink{classBlockStatement_a20df05e7536e375226639b483e8c4732}{BlockStatement}, \hyperlink{classCastExpression_af98e34f83dce5fec6d21f4baf4679dea}{CastExpression}, \hyperlink{classClassDeclaration_abb1e806c4c54cfecbc685b5c8a072eae}{ClassDeclaration}, \hyperlink{classEmptyStatement_a54138a042d8de2fecf90448a0048757b}{EmptyStatement}, \hyperlink{classFieldDeclaration_a60ce09d75a5864803ca3b24530267af1}{FieldDeclaration}, \hyperlink{classForStatement_a8d31a952806bc123a2f6227d4aa17f2f}{ForStatement}, \hyperlink{classIfStatement_ab4c2cd2f1c924951d782493281d15249}{IfStatement}, \hyperlink{classLiteralExpression_a02054e805df96a9d75ea64acc35d15a7}{LiteralExpression}, \hyperlink{classMethodCallExpression_a306fe23511d0d35c003a6256816ccea6}{MethodCallExpression}, \hyperlink{classMethodCallStatement_a4bbae8f172868a47ba651f436087e16f}{MethodCallStatement}, \hyperlink{classMethodDeclaration_af4989b6bfa1fdc87be33f4315aa54a7e}{MethodDeclaration}, \hyperlink{classNewExpression_a4b5178e78150432ac58a08197204fa27}{NewExpression}, \hyperlink{classParameterDeclaration_a7e9679286d169930445a159abd5e42ad}{ParameterDeclaration}, \hyperlink{classReferenceExpression_a5235ddeb368f790fd69b73dc1fe5a80e}{ReferenceExpression}, \hyperlink{classReturnStatement_a491cb39772b9054be31d27dbc0d72d0f}{ReturnStatement}, \hyperlink{classUnaryExpression_a555e53bb0a187856275b8d2c885b75d0}{UnaryExpression}, \hyperlink{classVariableDeclaration_af8e0086b00a9bc45f2aff7bf91d8f17d}{VariableDeclaration}, and \hyperlink{classWhileStatement_aeb7e6e61053a3e8a7b82a54c4eb8bf0d}{WhileStatement}.\hypertarget{classAstNode_ac18055137cc3544e330c42f0c41acf86}{
+\index{AstNode@{AstNode}!getKind@{getKind}}
+\index{getKind@{getKind}!AstNode@{AstNode}}
+\subsubsection[{getKind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AstNodeKind} AstNode::getKind ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAstNode_ac18055137cc3544e330c42f0c41acf86}
+Return the type (kind) of this node. \begin{DoxyReturn}{Returns}
+the node kind (of type AstNodeKind) 
+\end{DoxyReturn}
+\hypertarget{classAstNode_a93ce204950529a50b86813904e03dfd7}{
+\index{AstNode@{AstNode}!getLineNo@{getLineNo}}
+\index{getLineNo@{getLineNo}!AstNode@{AstNode}}
+\subsubsection[{getLineNo}]{\setlength{\rightskip}{0pt plus 5cm}int AstNode::getLineNo ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAstNode_a93ce204950529a50b86813904e03dfd7}
+Return the source line number of this node. \begin{DoxyReturn}{Returns}
+the line number 
+\end{DoxyReturn}
+\hypertarget{classAstNode_a9579a36e66ca9449b8aac87f0bf8f832}{
+\index{AstNode@{AstNode}!kind2string@{kind2string}}
+\index{kind2string@{kind2string}!AstNode@{AstNode}}
+\subsubsection[{kind2string}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ AstNode::kind2string ({\bf AstNode::AstNodeKind} {\em kind})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a9579a36e66ca9449b8aac87f0bf8f832}
+Return a string representation of an \hyperlink{classAstNode}{AstNode} kind
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em kind}]an AstNodeKind value, as defined in the \hyperlink{classAstNode}{AstNode} class\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string representation of the \hyperlink{classAstNode}{AstNode} kind 
+\end{DoxyReturn}
+\hypertarget{classAstNode_abb3df00672c92269af102f415b9acf62}{
+\index{AstNode@{AstNode}!operator2string@{operator2string}}
+\index{operator2string@{operator2string}!AstNode@{AstNode}}
+\subsubsection[{operator2string}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ AstNode::operator2string (int {\em op})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_abb3df00672c92269af102f415b9acf62}
+Return a string representation of a TinyJava operator
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em op}]an operator representation, as defined in the \hyperlink{classAstNode}{AstNode} class\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string representation of the operator 
+\end{DoxyReturn}
+\hypertarget{classAstNode_a1d7bf9b1d9cd668d155ddd86d22bc727}{
+\index{AstNode@{AstNode}!setKind@{setKind}}
+\index{setKind@{setKind}!AstNode@{AstNode}}
+\subsubsection[{setKind}]{\setlength{\rightskip}{0pt plus 5cm}void AstNode::setKind ({\bf AstNodeKind} {\em newKind})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAstNode_a1d7bf9b1d9cd668d155ddd86d22bc727}
+Set the type (kind) of this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em newKind}]is a new node type (kind). \end{DoxyParams}
+\hypertarget{classAstNode_abe694eb81a2d9042c571ecc2ca8d38e8}{
+\index{AstNode@{AstNode}!setLineNo@{setLineNo}}
+\index{setLineNo@{setLineNo}!AstNode@{AstNode}}
+\subsubsection[{setLineNo}]{\setlength{\rightskip}{0pt plus 5cm}void AstNode::setLineNo (int {\em lno})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAstNode_abe694eb81a2d9042c571ecc2ca8d38e8}
+Set the source line number for this node 
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]is a source code line number for this \hyperlink{classAstNode}{AstNode} (a positive integer). \end{DoxyParams}
+\hypertarget{classAstNode_a6b77773e4a27d8ca40bc1fce09d4764e}{
+\index{AstNode@{AstNode}!type2string@{type2string}}
+\index{type2string@{type2string}!AstNode@{AstNode}}
+\subsubsection[{type2string}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ AstNode::type2string (int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a6b77773e4a27d8ca40bc1fce09d4764e}
+Return a string representation of a TinyJava type
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]a type representation, as defined in the \hyperlink{classAstNode}{AstNode} class\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string representation of the type 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAstNode_af908b13b6954116a438f86ce595d5bfe}{
+\index{AstNode@{AstNode}!ADDOP@{ADDOP}}
+\index{ADDOP@{ADDOP}!AstNode@{AstNode}}
+\subsubsection[{ADDOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::ADDOP} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_af908b13b6954116a438f86ce595d5bfe}
+These constants are used to represent the TinyJava operators. '+' operator representation (prefix or infix) \hypertarget{classAstNode_a0a48e47b23689fb51c059cb48a007adc}{
+\index{AstNode@{AstNode}!DECOP@{DECOP}}
+\index{DECOP@{DECOP}!AstNode@{AstNode}}
+\subsubsection[{DECOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::DECOP} = 11\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a0a48e47b23689fb51c059cb48a007adc}
+'-\/-\/' operator (postfix) \hypertarget{classAstNode_a3972892cd58f1c70c84366804bdfd371}{
+\index{AstNode@{AstNode}!DIVOP@{DIVOP}}
+\index{DIVOP@{DIVOP}!AstNode@{AstNode}}
+\subsubsection[{DIVOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::DIVOP} = 3\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a3972892cd58f1c70c84366804bdfd371}
+'$\ast$' operator \hypertarget{classAstNode_a9cb6a842a496aed85756aa779789ce77}{
+\index{AstNode@{AstNode}!EQOP@{EQOP}}
+\index{EQOP@{EQOP}!AstNode@{AstNode}}
+\subsubsection[{EQOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::EQOP} = 4\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a9cb6a842a496aed85756aa779789ce77}
+'==' operator \hypertarget{classAstNode_aeb92e9f6e1407ff0c945f220b3da9820}{
+\index{AstNode@{AstNode}!GEOP@{GEOP}}
+\index{GEOP@{GEOP}!AstNode@{AstNode}}
+\subsubsection[{GEOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::GEOP} = 9\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_aeb92e9f6e1407ff0c945f220b3da9820}
+'$>$=$\ast$' operator \hypertarget{classAstNode_a3103a273c9da38b092334c757ee19ace}{
+\index{AstNode@{AstNode}!GTOP@{GTOP}}
+\index{GTOP@{GTOP}!AstNode@{AstNode}}
+\subsubsection[{GTOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::GTOP} = 7\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a3103a273c9da38b092334c757ee19ace}
+'$>$' operator \hypertarget{classAstNode_abf9092d925819312d2547c414b493c4f}{
+\index{AstNode@{AstNode}!INCOP@{INCOP}}
+\index{INCOP@{INCOP}!AstNode@{AstNode}}
+\subsubsection[{INCOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::INCOP} = 10\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_abf9092d925819312d2547c414b493c4f}
+'++' operator (postfix) \hypertarget{classAstNode_ac62da8b0313271a74293826f586dd6ea}{
+\index{AstNode@{AstNode}!LEOP@{LEOP}}
+\index{LEOP@{LEOP}!AstNode@{AstNode}}
+\subsubsection[{LEOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::LEOP} = 8\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_ac62da8b0313271a74293826f586dd6ea}
+'$<$=' operator \hypertarget{classAstNode_a1ddf9dbcce4b80d311e7080b8262b65b}{
+\index{AstNode@{AstNode}!LTOP@{LTOP}}
+\index{LTOP@{LTOP}!AstNode@{AstNode}}
+\subsubsection[{LTOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::LTOP} = 6\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a1ddf9dbcce4b80d311e7080b8262b65b}
+'$<$' operator \hypertarget{classAstNode_af1564bffc1a770122ea56654f4439531}{
+\index{AstNode@{AstNode}!MULOP@{MULOP}}
+\index{MULOP@{MULOP}!AstNode@{AstNode}}
+\subsubsection[{MULOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::MULOP} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_af1564bffc1a770122ea56654f4439531}
+'$\ast$' operator \hypertarget{classAstNode_a3347eacf3e38675c075a7ce1c4cb6e29}{
+\index{AstNode@{AstNode}!NEOP@{NEOP}}
+\index{NEOP@{NEOP}!AstNode@{AstNode}}
+\subsubsection[{NEOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::NEOP} = 5\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a3347eacf3e38675c075a7ce1c4cb6e29}
+'!=' operator \hypertarget{classAstNode_a8d62c361a16d84b762172fac68650561}{
+\index{AstNode@{AstNode}!SUBOP@{SUBOP}}
+\index{SUBOP@{SUBOP}!AstNode@{AstNode}}
+\subsubsection[{SUBOP}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::SUBOP} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a8d62c361a16d84b762172fac68650561}
+'-\/' operator representation (prefix or infix) \hypertarget{classAstNode_a71904f4c33eff3bb3a37fadda88f12c9}{
+\index{AstNode@{AstNode}!TBOOL@{TBOOL}}
+\index{TBOOL@{TBOOL}!AstNode@{AstNode}}
+\subsubsection[{TBOOL}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TBOOL} = 3\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a71904f4c33eff3bb3a37fadda88f12c9}
+boolean type representation \hypertarget{classAstNode_abf470f775bd7a7bfc2c0610716054339}{
+\index{AstNode@{AstNode}!TFLOAT@{TFLOAT}}
+\index{TFLOAT@{TFLOAT}!AstNode@{AstNode}}
+\subsubsection[{TFLOAT}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TFLOAT} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_abf470f775bd7a7bfc2c0610716054339}
+float type representation \hypertarget{classAstNode_a9d01a6ac8a4a7a5b2d4a3ec8a7e93fa7}{
+\index{AstNode@{AstNode}!TFLOATA@{TFLOATA}}
+\index{TFLOATA@{TFLOATA}!AstNode@{AstNode}}
+\subsubsection[{TFLOATA}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TFLOATA} = 6\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a9d01a6ac8a4a7a5b2d4a3ec8a7e93fa7}
+float\mbox{[}\mbox{]} type representation \hypertarget{classAstNode_a8568313f5d280773a446280c94d382f8}{
+\index{AstNode@{AstNode}!TINT@{TINT}}
+\index{TINT@{TINT}!AstNode@{AstNode}}
+\subsubsection[{TINT}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TINT} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a8568313f5d280773a446280c94d382f8}
+int type representation \hypertarget{classAstNode_a7233043e1a9d95c3120a62ac66c89608}{
+\index{AstNode@{AstNode}!TINTA@{TINTA}}
+\index{TINTA@{TINTA}!AstNode@{AstNode}}
+\subsubsection[{TINTA}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TINTA} = 5\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a7233043e1a9d95c3120a62ac66c89608}
+int\mbox{[}\mbox{]} type representation \hypertarget{classAstNode_ad84a595b7727d93d325664d5bf89c766}{
+\index{AstNode@{AstNode}!TREF@{TREF}}
+\index{TREF@{TREF}!AstNode@{AstNode}}
+\subsubsection[{TREF}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TREF} = 8\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_ad84a595b7727d93d325664d5bf89c766}
+basic reference type representation (to be used for null expression type) \hypertarget{classAstNode_a2245a2aec841592ecddf8f9497306a4b}{
+\index{AstNode@{AstNode}!TSTRING@{TSTRING}}
+\index{TSTRING@{TSTRING}!AstNode@{AstNode}}
+\subsubsection[{TSTRING}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TSTRING} = 4\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_a2245a2aec841592ecddf8f9497306a4b}
+String type representation \hypertarget{classAstNode_ae3a9310b89b8c86afe245cf88ab1369a}{
+\index{AstNode@{AstNode}!TSTRINGA@{TSTRINGA}}
+\index{TSTRINGA@{TSTRINGA}!AstNode@{AstNode}}
+\subsubsection[{TSTRINGA}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TSTRINGA} = 7\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_ae3a9310b89b8c86afe245cf88ab1369a}
+String\mbox{[}\mbox{]} type representation \hypertarget{classAstNode_ac664e0864b9c856e947d5fde632eb5e7}{
+\index{AstNode@{AstNode}!TVOID@{TVOID}}
+\index{TVOID@{TVOID}!AstNode@{AstNode}}
+\subsubsection[{TVOID}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf AstNode::TVOID} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classAstNode_ac664e0864b9c856e947d5fde632eb5e7}
+These constants are used to represent the TinyJava types. void type representation 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AstNode.h\item 
+AstNode.cpp\end{DoxyCompactItemize}

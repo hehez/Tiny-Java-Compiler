@@ -1,0 +1,166 @@
+\hypertarget{classFieldDeclaration}{
+\section{FieldDeclaration Class Reference}
+\label{classFieldDeclaration}\index{FieldDeclaration@{FieldDeclaration}}
+}
+
+
+This class represents a field declaration in a TinyJava class.  
+
+
+{\ttfamily \#include $<$FieldDeclaration.h$>$}Inheritance diagram for FieldDeclaration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classFieldDeclaration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFieldDeclaration_ae9f21a335682f2c26688c8edaf9881e6}{FieldDeclaration} (int lno, const char $\ast$fieldName, int tp, const char $\ast$iv)
+\item 
+const char $\ast$ \hyperlink{classFieldDeclaration_a132a85e17482895ac3af743eca97b2c4}{getName} ()
+\item 
+void \hyperlink{classFieldDeclaration_a960feae9f9db3bda2fb1ff5d410c3613}{setName} (const char $\ast$nm)
+\item 
+int \hyperlink{classFieldDeclaration_af7bf6c60c56fbe7e8e27e470fb6ff870}{getType} ()
+\item 
+void \hyperlink{classFieldDeclaration_a0dd7650a679bfa235441789848a54740}{setType} (int tp)
+\item 
+const char $\ast$ \hyperlink{classFieldDeclaration_afaef5c16cd739826c2e1463666690e95}{getInitValue} ()
+\item 
+void \hyperlink{classFieldDeclaration_a7b9500c22fec4f983f696751a2581fa7}{setInitValue} (const char $\ast$iv)
+\item 
+ENTRY $\ast$ \hyperlink{classFieldDeclaration_a133d01ba5677049a2fb8eeebc91229c0}{getEntry} ()
+\item 
+void \hyperlink{classFieldDeclaration_a0220f27540af855ca7c7803728926fb5}{setEntry} (ENTRY $\ast$e)
+\item 
+void \hyperlink{classFieldDeclaration_a60ce09d75a5864803ca3b24530267af1}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a field declaration in a TinyJava class. A class field is represented by:
+\begin{DoxyItemize}
+\item field name -\/ a string
+\item type -\/ an integer value, as defined in the \hyperlink{classAstNode}{AstNode} class
+\item initial value -\/ a string representing the initial value literal
+\item a pointer to the symbol table ENTRY for the field may be provided, as well.
+\end{DoxyItemize}
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFieldDeclaration_ae9f21a335682f2c26688c8edaf9881e6}{
+\index{FieldDeclaration@{FieldDeclaration}!FieldDeclaration@{FieldDeclaration}}
+\index{FieldDeclaration@{FieldDeclaration}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{FieldDeclaration}]{\setlength{\rightskip}{0pt plus 5cm}FieldDeclaration::FieldDeclaration (int {\em lno}, \/  const char $\ast$ {\em fieldName}, \/  int {\em tp}, \/  const char $\ast$ {\em iv})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_ae9f21a335682f2c26688c8edaf9881e6}
+Create a new \hyperlink{classFieldDeclaration}{FieldDeclaration} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the field declaration. \item[{\em fieldName}]a string with the field name \item[{\em tp}]an integer representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class \item[{\em iv}]a string with the initial value literal. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the fieldName or the initial value is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFieldDeclaration_a60ce09d75a5864803ca3b24530267af1}{
+\index{FieldDeclaration@{FieldDeclaration}!accept@{accept}}
+\index{accept@{accept}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void FieldDeclaration::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classFieldDeclaration_a60ce09d75a5864803ca3b24530267af1}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classFieldDeclaration_a133d01ba5677049a2fb8eeebc91229c0}{
+\index{FieldDeclaration@{FieldDeclaration}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ FieldDeclaration::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_a133d01ba5677049a2fb8eeebc91229c0}
+Return a pointer to the symbol table ENTRY representing this field This value may be undefined before the symbol table is created.
+
+\begin{DoxyReturn}{Returns}
+a pointer to the symbol table ENTRY representing this field 
+\end{DoxyReturn}
+\hypertarget{classFieldDeclaration_afaef5c16cd739826c2e1463666690e95}{
+\index{FieldDeclaration@{FieldDeclaration}!getInitValue@{getInitValue}}
+\index{getInitValue@{getInitValue}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{getInitValue}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ FieldDeclaration::getInitValue ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_afaef5c16cd739826c2e1463666690e95}
+Return the initial value of this \hyperlink{classFieldDeclaration}{FieldDeclaration}.
+
+\begin{DoxyReturn}{Returns}
+a string representing the initial value of the field. 
+\end{DoxyReturn}
+\hypertarget{classFieldDeclaration_a132a85e17482895ac3af743eca97b2c4}{
+\index{FieldDeclaration@{FieldDeclaration}!getName@{getName}}
+\index{getName@{getName}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ FieldDeclaration::getName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_a132a85e17482895ac3af743eca97b2c4}
+Return the field name.
+
+\begin{DoxyReturn}{Returns}
+string representing the field name. 
+\end{DoxyReturn}
+\hypertarget{classFieldDeclaration_af7bf6c60c56fbe7e8e27e470fb6ff870}{
+\index{FieldDeclaration@{FieldDeclaration}!getType@{getType}}
+\index{getType@{getType}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}int FieldDeclaration::getType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_af7bf6c60c56fbe7e8e27e470fb6ff870}
+Return the type of this \hyperlink{classFieldDeclaration}{FieldDeclaration} node.
+
+\begin{DoxyReturn}{Returns}
+an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classFieldDeclaration_a0220f27540af855ca7c7803728926fb5}{
+\index{FieldDeclaration@{FieldDeclaration}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void FieldDeclaration::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_a0220f27540af855ca7c7803728926fb5}
+Set the pointer to the symbol table entry representing this field. This value will typically be set during the symbol table construction phase.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]the pointer to the symbol table ENTRY representing this field \end{DoxyParams}
+\hypertarget{classFieldDeclaration_a7b9500c22fec4f983f696751a2581fa7}{
+\index{FieldDeclaration@{FieldDeclaration}!setInitValue@{setInitValue}}
+\index{setInitValue@{setInitValue}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{setInitValue}]{\setlength{\rightskip}{0pt plus 5cm}void FieldDeclaration::setInitValue (const char $\ast$ {\em iv})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_a7b9500c22fec4f983f696751a2581fa7}
+Set the new initial value of this \hyperlink{classFieldDeclaration}{FieldDeclaration}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em iv}]a string representing the initial value. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the initial value is NULL \end{DoxyExceptions}
+\hypertarget{classFieldDeclaration_a960feae9f9db3bda2fb1ff5d410c3613}{
+\index{FieldDeclaration@{FieldDeclaration}!setName@{setName}}
+\index{setName@{setName}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void FieldDeclaration::setName (const char $\ast$ {\em nm})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_a960feae9f9db3bda2fb1ff5d410c3613}
+Set the field name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nm}]a string representing the new name of the field. \end{DoxyParams}
+\hypertarget{classFieldDeclaration_a0dd7650a679bfa235441789848a54740}{
+\index{FieldDeclaration@{FieldDeclaration}!setType@{setType}}
+\index{setType@{setType}!FieldDeclaration@{FieldDeclaration}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void FieldDeclaration::setType (int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFieldDeclaration_a0dd7650a679bfa235441789848a54740}
+Set the new type of this \hyperlink{classFieldDeclaration}{FieldDeclaration}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+FieldDeclaration.h\end{DoxyCompactItemize}

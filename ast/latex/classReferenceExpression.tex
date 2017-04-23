@@ -1,0 +1,129 @@
+\hypertarget{classReferenceExpression}{
+\section{ReferenceExpression Class Reference}
+\label{classReferenceExpression}\index{ReferenceExpression@{ReferenceExpression}}
+}
+
+
+This class represents an identifier reference in a TinyJava expression; may be an array element reference with an index (subscript) expression.  
+
+
+{\ttfamily \#include $<$ReferenceExpression.h$>$}Inheritance diagram for ReferenceExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classReferenceExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classReferenceExpression_a7f614ef621f7336070a5a0f495475cce}{ReferenceExpression} (int lno, const char $\ast$n)
+\item 
+\hyperlink{classReferenceExpression_a374d0940a132e2c36b96f502354822af}{ReferenceExpression} (int lno, const char $\ast$n, \hyperlink{classExpression}{Expression} $\ast$ex)
+\item 
+const char $\ast$ \hyperlink{classReferenceExpression_a5a5123067be08b29efb72db0a3c59ec0}{getName} ()
+\item 
+ENTRY $\ast$ \hyperlink{classReferenceExpression_aaa972751c0253013518547cf6efaa513}{getEntry} ()
+\item 
+void \hyperlink{classReferenceExpression_a764220182810e4b7d0ec4b5f294d08f8}{setEntry} (ENTRY $\ast$e)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classReferenceExpression_a88b28a401551edd1cd4462df16ce8a51}{getExpression} ()
+\item 
+void \hyperlink{classReferenceExpression_a5235ddeb368f790fd69b73dc1fe5a80e}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents an identifier reference in a TinyJava expression; may be an array element reference with an index (subscript) expression. A referred identifier may be either a class field, a method parameter, or a local variable. It may also be a reference to an array alement. A \hyperlink{classReferenceExpression}{ReferenceExpression} is usually a leaf in an Abstract Syntax Tree.
+
+A reference expression representation has:
+\begin{DoxyItemize}
+\item a string representing the referenced name (a variable, parameter, or a class field);
+\item an index (subscript) expression, if the reference is to an array element
+\item a pointer to the symbol table entry for the name may also be included. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classReferenceExpression_a7f614ef621f7336070a5a0f495475cce}{
+\index{ReferenceExpression@{ReferenceExpression}!ReferenceExpression@{ReferenceExpression}}
+\index{ReferenceExpression@{ReferenceExpression}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{ReferenceExpression}]{\setlength{\rightskip}{0pt plus 5cm}ReferenceExpression::ReferenceExpression (int {\em lno}, \/  const char $\ast$ {\em n})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classReferenceExpression_a7f614ef621f7336070a5a0f495475cce}
+Create a new \hyperlink{classReferenceExpression}{ReferenceExpression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]is a source line number with the referenced identifier \item[{\em n}]is a string representing the name \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the name is NULL \end{DoxyExceptions}
+\hypertarget{classReferenceExpression_a374d0940a132e2c36b96f502354822af}{
+\index{ReferenceExpression@{ReferenceExpression}!ReferenceExpression@{ReferenceExpression}}
+\index{ReferenceExpression@{ReferenceExpression}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{ReferenceExpression}]{\setlength{\rightskip}{0pt plus 5cm}ReferenceExpression::ReferenceExpression (int {\em lno}, \/  const char $\ast$ {\em n}, \/  {\bf Expression} $\ast$ {\em ex})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classReferenceExpression_a374d0940a132e2c36b96f502354822af}
+Create a new \hyperlink{classReferenceExpression}{ReferenceExpression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]is a source line number with the referenced identifier \item[{\em n}]is a string representing the name \item[{\em ex}]is a pointer to an index (subscript) expression, if it is an array element reference \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the name or the expression is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classReferenceExpression_a5235ddeb368f790fd69b73dc1fe5a80e}{
+\index{ReferenceExpression@{ReferenceExpression}!accept@{accept}}
+\index{accept@{accept}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void ReferenceExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classReferenceExpression_a5235ddeb368f790fd69b73dc1fe5a80e}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classReferenceExpression_aaa972751c0253013518547cf6efaa513}{
+\index{ReferenceExpression@{ReferenceExpression}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ ReferenceExpression::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classReferenceExpression_aaa972751c0253013518547cf6efaa513}
+Return the symbol table ENTRY representing the referenced identifier.
+
+\begin{DoxyReturn}{Returns}
+ENTRY pointer to the symbol table representing the referenced identifier 
+\end{DoxyReturn}
+\hypertarget{classReferenceExpression_a88b28a401551edd1cd4462df16ce8a51}{
+\index{ReferenceExpression@{ReferenceExpression}!getExpression@{getExpression}}
+\index{getExpression@{getExpression}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{getExpression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ ReferenceExpression::getExpression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classReferenceExpression_a88b28a401551edd1cd4462df16ce8a51}
+Return the index (subscript) expression, if it is an array element reference.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classExpression}{Expression} pointer representing the array index (subscript). 
+\end{DoxyReturn}
+\hypertarget{classReferenceExpression_a5a5123067be08b29efb72db0a3c59ec0}{
+\index{ReferenceExpression@{ReferenceExpression}!getName@{getName}}
+\index{getName@{getName}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ReferenceExpression::getName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classReferenceExpression_a5a5123067be08b29efb72db0a3c59ec0}
+Return the referenced identifier (variable, field, or parameter).
+
+\begin{DoxyReturn}{Returns}
+a string representing the referenced name 
+\end{DoxyReturn}
+\hypertarget{classReferenceExpression_a764220182810e4b7d0ec4b5f294d08f8}{
+\index{ReferenceExpression@{ReferenceExpression}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!ReferenceExpression@{ReferenceExpression}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void ReferenceExpression::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classReferenceExpression_a764220182810e4b7d0ec4b5f294d08f8}
+Set the symbol table ENTRY representing the referenced identifier.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]is the new pointer to the symbol table. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+ReferenceExpression.h\end{DoxyCompactItemize}

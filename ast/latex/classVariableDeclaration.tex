@@ -1,0 +1,166 @@
+\hypertarget{classVariableDeclaration}{
+\section{VariableDeclaration Class Reference}
+\label{classVariableDeclaration}\index{VariableDeclaration@{VariableDeclaration}}
+}
+
+
+This class represents a declaration of a local variable in a TinyJava class method.  
+
+
+{\ttfamily \#include $<$VariableDeclaration.h$>$}Inheritance diagram for VariableDeclaration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classVariableDeclaration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVariableDeclaration_a4d671e248b007508b41e69a6c0571957}{VariableDeclaration} (int lno, const char $\ast$nm, int tp, const char $\ast$iv)
+\item 
+const char $\ast$ \hyperlink{classVariableDeclaration_a0651102c92331f832679816bccd08ddd}{getName} ()
+\item 
+void \hyperlink{classVariableDeclaration_a87d34512598049ef3f1d945451873ab5}{setName} (const char $\ast$nm)
+\item 
+int \hyperlink{classVariableDeclaration_a1384f2df0a1fcc9d2f55a20d4db0d34b}{getType} ()
+\item 
+void \hyperlink{classVariableDeclaration_a3fbc1e04d3d8e6aa487ced5215347b51}{setType} (int tp)
+\item 
+const char $\ast$ \hyperlink{classVariableDeclaration_ad4e01c324003e1730afcfe3a231ee2a0}{getInitValue} ()
+\item 
+void \hyperlink{classVariableDeclaration_a4bdb316526fd2c35221c6b65aa667bc7}{setInitValue} (const char $\ast$iv)
+\item 
+ENTRY $\ast$ \hyperlink{classVariableDeclaration_a42520812cc7fd155b4d30852ca1c68f7}{getEntry} ()
+\item 
+void \hyperlink{classVariableDeclaration_a42cfc2417b553b93190b937d7413a32c}{setEntry} (ENTRY $\ast$e)
+\item 
+void \hyperlink{classVariableDeclaration_af8e0086b00a9bc45f2aff7bf91d8f17d}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a declaration of a local variable in a TinyJava class method. A variable is represented by:
+\begin{DoxyItemize}
+\item variable name -\/ a string
+\item type -\/ an integer value, as defined in the \hyperlink{classAstNode}{AstNode} class
+\item initial value -\/ a string representing the initial value (a literal)
+\item a pointer to the symbol table ENTRY for the variable (which may be initially undefined).
+\end{DoxyItemize}
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVariableDeclaration_a4d671e248b007508b41e69a6c0571957}{
+\index{VariableDeclaration@{VariableDeclaration}!VariableDeclaration@{VariableDeclaration}}
+\index{VariableDeclaration@{VariableDeclaration}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{VariableDeclaration}]{\setlength{\rightskip}{0pt plus 5cm}VariableDeclaration::VariableDeclaration (int {\em lno}, \/  const char $\ast$ {\em nm}, \/  int {\em tp}, \/  const char $\ast$ {\em iv})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a4d671e248b007508b41e69a6c0571957}
+Create a new \hyperlink{classVariableDeclaration}{VariableDeclaration} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the variable declaration. \item[{\em nm}]a string with the variable name \item[{\em tp}]an integer representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class \item[{\em iv}]a string with the initial value (a literal) \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the variable name or the initial value is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVariableDeclaration_af8e0086b00a9bc45f2aff7bf91d8f17d}{
+\index{VariableDeclaration@{VariableDeclaration}!accept@{accept}}
+\index{accept@{accept}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void VariableDeclaration::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classVariableDeclaration_af8e0086b00a9bc45f2aff7bf91d8f17d}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classVariableDeclaration_a42520812cc7fd155b4d30852ca1c68f7}{
+\index{VariableDeclaration@{VariableDeclaration}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ VariableDeclaration::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a42520812cc7fd155b4d30852ca1c68f7}
+Return a pointer to the symbol table ENTRY representing this variable This value may be undefined before the symbol table is created.
+
+\begin{DoxyReturn}{Returns}
+a pointer to the symbol table ENTRY representing this variable 
+\end{DoxyReturn}
+\hypertarget{classVariableDeclaration_ad4e01c324003e1730afcfe3a231ee2a0}{
+\index{VariableDeclaration@{VariableDeclaration}!getInitValue@{getInitValue}}
+\index{getInitValue@{getInitValue}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{getInitValue}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ VariableDeclaration::getInitValue ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_ad4e01c324003e1730afcfe3a231ee2a0}
+Return the initial value of this \hyperlink{classVariableDeclaration}{VariableDeclaration}.
+
+\begin{DoxyReturn}{Returns}
+a string representing the initial value of the variable. 
+\end{DoxyReturn}
+\hypertarget{classVariableDeclaration_a0651102c92331f832679816bccd08ddd}{
+\index{VariableDeclaration@{VariableDeclaration}!getName@{getName}}
+\index{getName@{getName}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ VariableDeclaration::getName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a0651102c92331f832679816bccd08ddd}
+Return the variable name.
+
+\begin{DoxyReturn}{Returns}
+string representing the variable name. 
+\end{DoxyReturn}
+\hypertarget{classVariableDeclaration_a1384f2df0a1fcc9d2f55a20d4db0d34b}{
+\index{VariableDeclaration@{VariableDeclaration}!getType@{getType}}
+\index{getType@{getType}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}int VariableDeclaration::getType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a1384f2df0a1fcc9d2f55a20d4db0d34b}
+Return the type of this \hyperlink{classVariableDeclaration}{VariableDeclaration}.
+
+\begin{DoxyReturn}{Returns}
+an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classVariableDeclaration_a42cfc2417b553b93190b937d7413a32c}{
+\index{VariableDeclaration@{VariableDeclaration}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void VariableDeclaration::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a42cfc2417b553b93190b937d7413a32c}
+Set the pointer to the symbol table ENTRY representing this variable. This value will typically be set during the symbol table construction phase.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]the pointer to the symbol table ENTRY representing this variable \end{DoxyParams}
+\hypertarget{classVariableDeclaration_a4bdb316526fd2c35221c6b65aa667bc7}{
+\index{VariableDeclaration@{VariableDeclaration}!setInitValue@{setInitValue}}
+\index{setInitValue@{setInitValue}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{setInitValue}]{\setlength{\rightskip}{0pt plus 5cm}void VariableDeclaration::setInitValue (const char $\ast$ {\em iv})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a4bdb316526fd2c35221c6b65aa667bc7}
+Set the new initial value of this \hyperlink{classVariableDeclaration}{VariableDeclaration}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em iv}]a string representing the initial value of this variable \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the initial value is NULL \end{DoxyExceptions}
+\hypertarget{classVariableDeclaration_a87d34512598049ef3f1d945451873ab5}{
+\index{VariableDeclaration@{VariableDeclaration}!setName@{setName}}
+\index{setName@{setName}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void VariableDeclaration::setName (const char $\ast$ {\em nm})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a87d34512598049ef3f1d945451873ab5}
+Set the variable name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nm}]a string representing the new name of the variable. \end{DoxyParams}
+\hypertarget{classVariableDeclaration_a3fbc1e04d3d8e6aa487ced5215347b51}{
+\index{VariableDeclaration@{VariableDeclaration}!setType@{setType}}
+\index{setType@{setType}!VariableDeclaration@{VariableDeclaration}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void VariableDeclaration::setType (int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classVariableDeclaration_a3fbc1e04d3d8e6aa487ced5215347b51}
+Set the new type of this \hyperlink{classVariableDeclaration}{VariableDeclaration}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+VariableDeclaration.h\end{DoxyCompactItemize}

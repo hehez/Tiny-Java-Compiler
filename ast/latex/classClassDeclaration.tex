@@ -1,0 +1,130 @@
+\hypertarget{classClassDeclaration}{
+\section{ClassDeclaration Class Reference}
+\label{classClassDeclaration}\index{ClassDeclaration@{ClassDeclaration}}
+}
+
+
+This class represents a TinyJava class declaration.  
+
+
+{\ttfamily \#include $<$ClassDeclaration.h$>$}Inheritance diagram for ClassDeclaration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classClassDeclaration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClassDeclaration_a1016b2f9166666f12ff69d8f35c5f4b0}{ClassDeclaration} (int lno, const char $\ast$className)
+\item 
+const char $\ast$ \hyperlink{classClassDeclaration_aee9941ff0bc3f063352dc9150c8f4733}{getName} ()
+\item 
+void \hyperlink{classClassDeclaration_a4d48dcc425315c542f1bee48287fb237}{addMember} (\hyperlink{classDeclaration}{Declaration} $\ast$member)
+\item 
+int \hyperlink{classClassDeclaration_ae2b6695aa4eee03d8516637535ec4907}{getNoMembers} ()
+\item 
+\hyperlink{classDeclaration}{Declaration} $\ast$ \hyperlink{classClassDeclaration_a2a905ef9d8d1034606f554917c1a83f6}{getMember} (int pos)
+\item 
+std::vector$<$ \hyperlink{classDeclaration}{Declaration} $\ast$ $>$ $\ast$ \hyperlink{classClassDeclaration_ac52a79fdbdf26dd21327c54632d9d452}{getMembers} ()
+\item 
+void \hyperlink{classClassDeclaration_abb1e806c4c54cfecbc685b5c8a072eae}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava class declaration. A class declaration is represented by:
+\begin{DoxyItemize}
+\item a string representing the class name
+\item a list of class members, that is fields and methods, represented by \hyperlink{classFieldDeclaration}{FieldDeclaration} and \hyperlink{classMethodDeclaration}{MethodDeclaration} nodes, respectively. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classClassDeclaration_a1016b2f9166666f12ff69d8f35c5f4b0}{
+\index{ClassDeclaration@{ClassDeclaration}!ClassDeclaration@{ClassDeclaration}}
+\index{ClassDeclaration@{ClassDeclaration}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{ClassDeclaration}]{\setlength{\rightskip}{0pt plus 5cm}ClassDeclaration::ClassDeclaration (int {\em lno}, \/  const char $\ast$ {\em className})}}
+\label{classClassDeclaration_a1016b2f9166666f12ff69d8f35c5f4b0}
+Create a new \hyperlink{classClassDeclaration}{ClassDeclaration} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number (should be the start of the class declaration). \item[{\em className}]a string with the class name \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classClassDeclaration_abb1e806c4c54cfecbc685b5c8a072eae}{
+\index{ClassDeclaration@{ClassDeclaration}!accept@{accept}}
+\index{accept@{accept}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void ClassDeclaration::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classClassDeclaration_abb1e806c4c54cfecbc685b5c8a072eae}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classClassDeclaration_a4d48dcc425315c542f1bee48287fb237}{
+\index{ClassDeclaration@{ClassDeclaration}!addMember@{addMember}}
+\index{addMember@{addMember}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{addMember}]{\setlength{\rightskip}{0pt plus 5cm}void ClassDeclaration::addMember ({\bf Declaration} $\ast$ {\em member})}}
+\label{classClassDeclaration_a4d48dcc425315c542f1bee48287fb237}
+Add a new class mamber (either a field or a method).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em member}]a \hyperlink{classDeclaration}{Declaration} node representing the new class member. It must be either a pointer to \hyperlink{classFieldDeclaration}{FieldDeclaration} or to \hyperlink{classMethodDeclaration}{MethodDeclaration}. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is neither a \hyperlink{classFieldDeclaration}{FieldDeclaration} nor a \hyperlink{classMethodDeclaration}{MethodDeclaration}. \end{DoxyExceptions}
+\hypertarget{classClassDeclaration_a2a905ef9d8d1034606f554917c1a83f6}{
+\index{ClassDeclaration@{ClassDeclaration}!getMember@{getMember}}
+\index{getMember@{getMember}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{getMember}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Declaration}$\ast$ ClassDeclaration::getMember (int {\em pos})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classClassDeclaration_a2a905ef9d8d1034606f554917c1a83f6}
+Return the i-\/the class member.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pos}]integer representing the position of the class member requested. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a \hyperlink{classDeclaration}{Declaration} representing the requested class member. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if there are no members or if the pos value is out of bounds \end{DoxyExceptions}
+\hypertarget{classClassDeclaration_ac52a79fdbdf26dd21327c54632d9d452}{
+\index{ClassDeclaration@{ClassDeclaration}!getMembers@{getMembers}}
+\index{getMembers@{getMembers}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{getMembers}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Declaration} $\ast$$>$$\ast$ ClassDeclaration::getMembers ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classClassDeclaration_ac52a79fdbdf26dd21327c54632d9d452}
+Return all class members.
+
+\begin{DoxyReturn}{Returns}
+a pointer to a std::vector representing all class members in this class declaration. 
+\end{DoxyReturn}
+\hypertarget{classClassDeclaration_aee9941ff0bc3f063352dc9150c8f4733}{
+\index{ClassDeclaration@{ClassDeclaration}!getName@{getName}}
+\index{getName@{getName}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ClassDeclaration::getName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classClassDeclaration_aee9941ff0bc3f063352dc9150c8f4733}
+Return the class name.
+
+\begin{DoxyReturn}{Returns}
+string representing the class name. 
+\end{DoxyReturn}
+\hypertarget{classClassDeclaration_ae2b6695aa4eee03d8516637535ec4907}{
+\index{ClassDeclaration@{ClassDeclaration}!getNoMembers@{getNoMembers}}
+\index{getNoMembers@{getNoMembers}!ClassDeclaration@{ClassDeclaration}}
+\subsubsection[{getNoMembers}]{\setlength{\rightskip}{0pt plus 5cm}int ClassDeclaration::getNoMembers ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classClassDeclaration_ae2b6695aa4eee03d8516637535ec4907}
+Return the number of class members in this \hyperlink{classClassDeclaration}{ClassDeclaration} node.
+
+\begin{DoxyReturn}{Returns}
+the number of class members. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ClassDeclaration.h\item 
+ClassDeclaration.cpp\end{DoxyCompactItemize}

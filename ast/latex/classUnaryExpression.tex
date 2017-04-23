@@ -1,0 +1,115 @@
+\hypertarget{classUnaryExpression}{
+\section{UnaryExpression Class Reference}
+\label{classUnaryExpression}\index{UnaryExpression@{UnaryExpression}}
+}
+
+
+This class represents a TinyJava (prefix or postfix) unary expression involving a unary operator and an operand expression.  
+
+
+{\ttfamily \#include $<$UnaryExpression.h$>$}Inheritance diagram for UnaryExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classUnaryExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUnaryExpression_a03b712bd21c8ec768ae8bdd95ef325f0}{UnaryExpression} (int lno, int op, \hyperlink{classExpression}{Expression} $\ast$arg, bool post=false)
+\item 
+int \hyperlink{classUnaryExpression_a9818b1b3ddfaa787e321ec28fea399dc}{getOperator} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classUnaryExpression_aca23f932e421218f5e260f09acd99b51}{getOperand} ()
+\item 
+void \hyperlink{classUnaryExpression_a6c05bb27e3025ec166041091e4023eaf}{setOperand} (\hyperlink{classExpression}{Expression} $\ast$arg)
+\item 
+bool \hyperlink{classUnaryExpression_aa7905d7a0bd4197cb72af72c8218194c}{isPostfix} ()
+\item 
+void \hyperlink{classUnaryExpression_a555e53bb0a187856275b8d2c885b75d0}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava (prefix or postfix) unary expression involving a unary operator and an operand expression. A unary expression is represented by:
+\begin{DoxyItemize}
+\item an operator (which must be an arithmetic operator)
+\item information if it is a postfix unary expression
+\item an operand \hyperlink{classExpression}{Expression} subtree representing the operator's argument 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classUnaryExpression_a03b712bd21c8ec768ae8bdd95ef325f0}{
+\index{UnaryExpression@{UnaryExpression}!UnaryExpression@{UnaryExpression}}
+\index{UnaryExpression@{UnaryExpression}!UnaryExpression@{UnaryExpression}}
+\subsubsection[{UnaryExpression}]{\setlength{\rightskip}{0pt plus 5cm}UnaryExpression::UnaryExpression (int {\em lno}, \/  int {\em op}, \/  {\bf Expression} $\ast$ {\em arg}, \/  bool {\em post} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classUnaryExpression_a03b712bd21c8ec768ae8bdd95ef325f0}
+Create a new \hyperlink{classUnaryExpression}{UnaryExpression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]source code line number with the unary expression. \item[{\em op}]an int value representing the operator; it should be one of the constants defined in the \hyperlink{classAstNode}{AstNode} class \item[{\em arg}]an \hyperlink{classExpression}{Expression} representing the operand \item[{\em post}]a boolean value indicating if it is a postfix unary expression; the default is false \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if either the arg operand is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classUnaryExpression_a555e53bb0a187856275b8d2c885b75d0}{
+\index{UnaryExpression@{UnaryExpression}!accept@{accept}}
+\index{accept@{accept}!UnaryExpression@{UnaryExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void UnaryExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classUnaryExpression_a555e53bb0a187856275b8d2c885b75d0}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classUnaryExpression_aca23f932e421218f5e260f09acd99b51}{
+\index{UnaryExpression@{UnaryExpression}!getOperand@{getOperand}}
+\index{getOperand@{getOperand}!UnaryExpression@{UnaryExpression}}
+\subsubsection[{getOperand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ UnaryExpression::getOperand ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classUnaryExpression_aca23f932e421218f5e260f09acd99b51}
+Return the operand of this unary expression.
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classExpression}{Expression} pointer which is the operand expression tree 
+\end{DoxyReturn}
+\hypertarget{classUnaryExpression_a9818b1b3ddfaa787e321ec28fea399dc}{
+\index{UnaryExpression@{UnaryExpression}!getOperator@{getOperator}}
+\index{getOperator@{getOperator}!UnaryExpression@{UnaryExpression}}
+\subsubsection[{getOperator}]{\setlength{\rightskip}{0pt plus 5cm}int UnaryExpression::getOperator ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classUnaryExpression_a9818b1b3ddfaa787e321ec28fea399dc}
+Return the operator of this unary expression.
+
+\begin{DoxyReturn}{Returns}
+operator, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classUnaryExpression_aa7905d7a0bd4197cb72af72c8218194c}{
+\index{UnaryExpression@{UnaryExpression}!isPostfix@{isPostfix}}
+\index{isPostfix@{isPostfix}!UnaryExpression@{UnaryExpression}}
+\subsubsection[{isPostfix}]{\setlength{\rightskip}{0pt plus 5cm}bool UnaryExpression::isPostfix ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classUnaryExpression_aa7905d7a0bd4197cb72af72c8218194c}
+Is it a postfix unary expression?
+
+\begin{DoxyReturn}{Returns}
+a boolean value indicating if it is a postifx unary expression 
+\end{DoxyReturn}
+\hypertarget{classUnaryExpression_a6c05bb27e3025ec166041091e4023eaf}{
+\index{UnaryExpression@{UnaryExpression}!setOperand@{setOperand}}
+\index{setOperand@{setOperand}!UnaryExpression@{UnaryExpression}}
+\subsubsection[{setOperand}]{\setlength{\rightskip}{0pt plus 5cm}void UnaryExpression::setOperand ({\bf Expression} $\ast$ {\em arg})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classUnaryExpression_a6c05bb27e3025ec166041091e4023eaf}
+Set the operand expression of this unary expression.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em arg}]the expression to be the new operand \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument expression is NULL \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+UnaryExpression.h\end{DoxyCompactItemize}

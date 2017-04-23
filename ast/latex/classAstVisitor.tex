@@ -1,0 +1,263 @@
+\hypertarget{classAstVisitor}{
+\section{AstVisitor Class Reference}
+\label{classAstVisitor}\index{AstVisitor@{AstVisitor}}
+}
+
+
+This is the parent of all Abstract Syntax Tree visitors; it is an abstract class.  
+
+
+{\ttfamily \#include $<$AstVisitor.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAstVisitor_ae922c774d8e8e3fbb9a81a229ef00ecb}{visit} (\hyperlink{classClassDeclaration}{ClassDeclaration} $\ast$aDeclNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_ab9d4c10a46ea5252fb90a76f347852af}{visit} (\hyperlink{classMethodDeclaration}{MethodDeclaration} $\ast$aDeclNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a15ca20c155aa1b3c67c983dc9ecf10a7}{visit} (\hyperlink{classFieldDeclaration}{FieldDeclaration} $\ast$aDeclNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a55c262f146345bdeb890ba032e08650a}{visit} (\hyperlink{classParameterDeclaration}{ParameterDeclaration} $\ast$aDeclNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a7b11f0796ae296e3edc720de75a496c3}{visit} (\hyperlink{classVariableDeclaration}{VariableDeclaration} $\ast$aDeclNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a60b3207e90b0a520a30147d4f4fba2a0}{visit} (\hyperlink{classLiteralExpression}{LiteralExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a20dc1c03f85502175abdd5cc7cd25a9d}{visit} (\hyperlink{classReferenceExpression}{ReferenceExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a84ce449d7f5ede3881cdcb8ac8f94078}{visit} (\hyperlink{classNewExpression}{NewExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_ab1c2fc3a9145d871b7f8a502324b58a7}{visit} (\hyperlink{classUnaryExpression}{UnaryExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a9b135e2823d8aab8a832478fd90ebf8c}{visit} (\hyperlink{classBinaryExpression}{BinaryExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a2b90ef6f1a66a690b66c03b700a5a6bf}{visit} (\hyperlink{classCastExpression}{CastExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_af1b565438e63e492a6696a7ee0872815}{visit} (\hyperlink{classMethodCallExpression}{MethodCallExpression} $\ast$anExpNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a44bb2ee3b317cd859760b2a747a26dfd}{visit} (\hyperlink{classAssignStatement}{AssignStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_ac1272bbe5b7c9b604cfd112001cbafa8}{visit} (\hyperlink{classWhileStatement}{WhileStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a04ab246b6b4f982075744cb79d9e3d83}{visit} (\hyperlink{classForStatement}{ForStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a013c3bcd69e558c3b5a1d129d7943dc3}{visit} (\hyperlink{classIfStatement}{IfStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a67d9b772dd6c8c7d0b95f13f06a94fcd}{visit} (\hyperlink{classReturnStatement}{ReturnStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a5599e57d09e99f818cc1e1b484e1616a}{visit} (\hyperlink{classBlockStatement}{BlockStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_a157fd3ed798acf5a3694bb045a4e83c5}{visit} (\hyperlink{classMethodCallStatement}{MethodCallStatement} $\ast$anStmtNode)=0
+\item 
+virtual void \hyperlink{classAstVisitor_ae4a605acd038f5983b70edb8f1d51ea2}{visit} (\hyperlink{classEmptyStatement}{EmptyStatement} $\ast$anStmtNode)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the parent of all Abstract Syntax Tree visitors; it is an abstract class. Specialized concrete visitors should be implemented as subclasses of \hyperlink{classAstVisitor}{AstVisitor}. The AstPrinter class can be used as an example. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classAstVisitor_ae4a605acd038f5983b70edb8f1d51ea2}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf EmptyStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_ae4a605acd038f5983b70edb8f1d51ea2}
+Visit a \hyperlink{classEmptyStatement}{EmptyStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classEmptyStatement}{EmptyStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a157fd3ed798acf5a3694bb045a4e83c5}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf MethodCallStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a157fd3ed798acf5a3694bb045a4e83c5}
+Visit a \hyperlink{classMethodCallStatement}{MethodCallStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classMethodCallStatement}{MethodCallStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a5599e57d09e99f818cc1e1b484e1616a}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf BlockStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a5599e57d09e99f818cc1e1b484e1616a}
+Visit a \hyperlink{classBlockStatement}{BlockStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classBlockStatement}{BlockStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a67d9b772dd6c8c7d0b95f13f06a94fcd}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf ReturnStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a67d9b772dd6c8c7d0b95f13f06a94fcd}
+Visit a \hyperlink{classReturnStatement}{ReturnStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classReturnStatement}{ReturnStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a013c3bcd69e558c3b5a1d129d7943dc3}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf IfStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a013c3bcd69e558c3b5a1d129d7943dc3}
+Visit a \hyperlink{classIfStatement}{IfStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classIfStatement}{IfStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a04ab246b6b4f982075744cb79d9e3d83}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf ForStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a04ab246b6b4f982075744cb79d9e3d83}
+Visit a \hyperlink{classForStatement}{ForStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classForStatement}{ForStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_ac1272bbe5b7c9b604cfd112001cbafa8}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf WhileStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_ac1272bbe5b7c9b604cfd112001cbafa8}
+Visit a \hyperlink{classWhileStatement}{WhileStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classWhileStatement}{WhileStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a44bb2ee3b317cd859760b2a747a26dfd}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf AssignStatement} $\ast$ {\em anStmtNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a44bb2ee3b317cd859760b2a747a26dfd}
+Visit a \hyperlink{classAssignStatement}{AssignStatement}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anStmtNode}]a \hyperlink{classAssignStatement}{AssignStatement} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_af1b565438e63e492a6696a7ee0872815}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf MethodCallExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_af1b565438e63e492a6696a7ee0872815}
+Visit a \hyperlink{classMethodCallExpression}{MethodCallExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classMethodCallExpression}{MethodCallExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a2b90ef6f1a66a690b66c03b700a5a6bf}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf CastExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a2b90ef6f1a66a690b66c03b700a5a6bf}
+Visit a \hyperlink{classCastExpression}{CastExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classCastExpression}{CastExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a9b135e2823d8aab8a832478fd90ebf8c}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf BinaryExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a9b135e2823d8aab8a832478fd90ebf8c}
+Visit a \hyperlink{classBinaryExpression}{BinaryExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classBinaryExpression}{BinaryExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_ab1c2fc3a9145d871b7f8a502324b58a7}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf UnaryExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_ab1c2fc3a9145d871b7f8a502324b58a7}
+Visit a \hyperlink{classUnaryExpression}{UnaryExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classUnaryExpression}{UnaryExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a84ce449d7f5ede3881cdcb8ac8f94078}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf NewExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a84ce449d7f5ede3881cdcb8ac8f94078}
+Visit a \hyperlink{classNewExpression}{NewExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classNewExpression}{NewExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a20dc1c03f85502175abdd5cc7cd25a9d}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf ReferenceExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a20dc1c03f85502175abdd5cc7cd25a9d}
+Visit a \hyperlink{classReferenceExpression}{ReferenceExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classReferenceExpression}{ReferenceExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a60b3207e90b0a520a30147d4f4fba2a0}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf LiteralExpression} $\ast$ {\em anExpNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a60b3207e90b0a520a30147d4f4fba2a0}
+Visit a \hyperlink{classLiteralExpression}{LiteralExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em anExpNode}]a \hyperlink{classLiteralExpression}{LiteralExpression} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a7b11f0796ae296e3edc720de75a496c3}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf VariableDeclaration} $\ast$ {\em aDeclNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a7b11f0796ae296e3edc720de75a496c3}
+Visit a \hyperlink{classVariableDeclaration}{VariableDeclaration}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em aDeclNode}]a \hyperlink{classVariableDeclaration}{VariableDeclaration} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a55c262f146345bdeb890ba032e08650a}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf ParameterDeclaration} $\ast$ {\em aDeclNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a55c262f146345bdeb890ba032e08650a}
+Visit a \hyperlink{classParameterDeclaration}{ParameterDeclaration}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em aDeclNode}]a \hyperlink{classParameterDeclaration}{ParameterDeclaration} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_a15ca20c155aa1b3c67c983dc9ecf10a7}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf FieldDeclaration} $\ast$ {\em aDeclNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_a15ca20c155aa1b3c67c983dc9ecf10a7}
+Visit a \hyperlink{classFieldDeclaration}{FieldDeclaration}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em aDeclNode}]a \hyperlink{classFieldDeclaration}{FieldDeclaration} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_ab9d4c10a46ea5252fb90a76f347852af}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf MethodDeclaration} $\ast$ {\em aDeclNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_ab9d4c10a46ea5252fb90a76f347852af}
+Visit a \hyperlink{classMethodDeclaration}{MethodDeclaration}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em aDeclNode}]a \hyperlink{classMethodDeclaration}{MethodDeclaration} to be visited \end{DoxyParams}
+\hypertarget{classAstVisitor_ae922c774d8e8e3fbb9a81a229ef00ecb}{
+\index{AstVisitor@{AstVisitor}!visit@{visit}}
+\index{visit@{visit}!AstVisitor@{AstVisitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void AstVisitor::visit ({\bf ClassDeclaration} $\ast$ {\em aDeclNode})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classAstVisitor_ae922c774d8e8e3fbb9a81a229ef00ecb}
+Visit a \hyperlink{classClassDeclaration}{ClassDeclaration}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em aDeclNode}]a class declaration to be visited \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+AstVisitor.h\end{DoxyCompactItemize}

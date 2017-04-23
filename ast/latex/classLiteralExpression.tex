@@ -1,0 +1,71 @@
+\hypertarget{classLiteralExpression}{
+\section{LiteralExpression Class Reference}
+\label{classLiteralExpression}\index{LiteralExpression@{LiteralExpression}}
+}
+
+
+This class represents a TinyJava literal (smallest expression).  
+
+
+{\ttfamily \#include $<$LiteralExpression.h$>$}Inheritance diagram for LiteralExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classLiteralExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLiteralExpression_a4401fd6efc3f6808d28d64a734070df6}{LiteralExpression} (int lno, const char $\ast$lit, int tp)
+\item 
+const char $\ast$ \hyperlink{classLiteralExpression_a6e8ba5b0d9da137dfe00750cbfe125b3}{getLiteral} ()
+\item 
+void \hyperlink{classLiteralExpression_a02054e805df96a9d75ea64acc35d15a7}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava literal (smallest expression). The literal is represented as a string. It is always a leaf in an Abstract Syntax Tree. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLiteralExpression_a4401fd6efc3f6808d28d64a734070df6}{
+\index{LiteralExpression@{LiteralExpression}!LiteralExpression@{LiteralExpression}}
+\index{LiteralExpression@{LiteralExpression}!LiteralExpression@{LiteralExpression}}
+\subsubsection[{LiteralExpression}]{\setlength{\rightskip}{0pt plus 5cm}LiteralExpression::LiteralExpression (int {\em lno}, \/  const char $\ast$ {\em lit}, \/  int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classLiteralExpression_a4401fd6efc3f6808d28d64a734070df6}
+Create a new \hyperlink{classLiteralExpression}{LiteralExpression} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]is a source line number with this literal \item[{\em lit}]a string representing the literal value \item[{\em tp}]an integer representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the lit argument is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLiteralExpression_a02054e805df96a9d75ea64acc35d15a7}{
+\index{LiteralExpression@{LiteralExpression}!accept@{accept}}
+\index{accept@{accept}!LiteralExpression@{LiteralExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void LiteralExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classLiteralExpression_a02054e805df96a9d75ea64acc35d15a7}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classLiteralExpression_a6e8ba5b0d9da137dfe00750cbfe125b3}{
+\index{LiteralExpression@{LiteralExpression}!getLiteral@{getLiteral}}
+\index{getLiteral@{getLiteral}!LiteralExpression@{LiteralExpression}}
+\subsubsection[{getLiteral}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ LiteralExpression::getLiteral ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classLiteralExpression_a6e8ba5b0d9da137dfe00750cbfe125b3}
+Return the literal value.
+
+\begin{DoxyReturn}{Returns}
+a string representing the literal value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LiteralExpression.h\end{DoxyCompactItemize}

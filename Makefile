@@ -1,20 +1,18 @@
-# @Time    : 4/23/17 1:29 AM
-# @Author  : hehez
-# @File    : Makefile
-# @Version : 1.0
-
-CXX		        = g++
-CPPFLAGS	    = -I/ast
-CXXFLAGS	    = -g
-LDFLAGS		    = -L/ast
-LDLIBS		    = -lAst -lfl
-YACC            = bison -y
-LEX             = flex
+CXX		= g++
+CPPFLAGS	= -Iast
+CXXFLAGS	= -g
+LDFLAGS		= -Last
+LDLIBS		= -lAst -lfl
+YACC        = bison -y
+LEX         = flex
 
 
 SRCS            = main.cpp lex.yy.c y.tab.c AstPrinter.cpp Entry.cpp SymTab.cpp CodeGen.cpp
+
 HDRS            = y.tab.h Ast.h
+
 OBJS	        = main.o y.tab.o lex.yy.o AstPrinter.o Entry.o SymTab.o CodeGen.o
+
 
 
 # compile rules
@@ -33,10 +31,10 @@ tjc: Makefile $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(LDFLAGS) $(LDLIBS) -g
 
 # non-standard target dependencies
-y.tab.o: Makefile y.tab.c /ast/Ast.h
+y.tab.o: Makefile y.tab.c ast/Ast.h
 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) y.tab.c
 
-lex.yy.o: Makefile lex.yy.c y.tab.h /ast/Ast.h
+lex.yy.o: Makefile lex.yy.c y.tab.h ast/Ast.h
 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) lex.yy.c
 
 y.tab.c y.tab.h: Makefile tjc.y
@@ -57,4 +55,4 @@ realclean: clean
 ## Dependencies
 ##
 #main.o: main.c
-main.o: main.cpp /ast/Ast.h
+main.o: main.cpp ast/Ast.h

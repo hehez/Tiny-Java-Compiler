@@ -1,0 +1,138 @@
+\hypertarget{classParameterDeclaration}{
+\section{ParameterDeclaration Class Reference}
+\label{classParameterDeclaration}\index{ParameterDeclaration@{ParameterDeclaration}}
+}
+
+
+This class represents a declaration of a formal parameter of a TinyJava class method.  
+
+
+{\ttfamily \#include $<$ParameterDeclaration.h$>$}Inheritance diagram for ParameterDeclaration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classParameterDeclaration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParameterDeclaration_ac1212fec82bbbcb3d965f6b21ba0f814}{ParameterDeclaration} (int lno, const char $\ast$nm, int tp)
+\item 
+const char $\ast$ \hyperlink{classParameterDeclaration_ae8b4050a45ff9671d5bc4020ce8a921f}{getName} ()
+\item 
+void \hyperlink{classParameterDeclaration_a1883647c68399feaffb9531e27b85bb2}{setName} (const char $\ast$nm)
+\item 
+int \hyperlink{classParameterDeclaration_a68cbaf66b6aa35c05fc30f236321829a}{getType} ()
+\item 
+void \hyperlink{classParameterDeclaration_aee125114f14e0bcfaa15753d6b1379cf}{setType} (int tp)
+\item 
+ENTRY $\ast$ \hyperlink{classParameterDeclaration_a80ec2ae28260deaa1925f3de51c620a8}{getEntry} ()
+\item 
+void \hyperlink{classParameterDeclaration_a8b07142bec67be6eccd2bdf3147fb5a2}{setEntry} (ENTRY $\ast$e)
+\item 
+void \hyperlink{classParameterDeclaration_a7e9679286d169930445a159abd5e42ad}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a declaration of a formal parameter of a TinyJava class method. A parameter is represented by:
+\begin{DoxyItemize}
+\item parameter name -\/ a string
+\item type -\/ an integer value, as defined in the \hyperlink{classAstNode}{AstNode} class
+\item a pointer to the symbol table ENTRY for the variable (which may be initially undefined).
+\end{DoxyItemize}
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParameterDeclaration_ac1212fec82bbbcb3d965f6b21ba0f814}{
+\index{ParameterDeclaration@{ParameterDeclaration}!ParameterDeclaration@{ParameterDeclaration}}
+\index{ParameterDeclaration@{ParameterDeclaration}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{ParameterDeclaration}]{\setlength{\rightskip}{0pt plus 5cm}ParameterDeclaration::ParameterDeclaration (int {\em lno}, \/  const char $\ast$ {\em nm}, \/  int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_ac1212fec82bbbcb3d965f6b21ba0f814}
+Create a new \hyperlink{classParameterDeclaration}{ParameterDeclaration} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the parameter declaration. \item[{\em nm}]a string with the parameter name \item[{\em tp}]an integer representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the parameter name is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParameterDeclaration_a7e9679286d169930445a159abd5e42ad}{
+\index{ParameterDeclaration@{ParameterDeclaration}!accept@{accept}}
+\index{accept@{accept}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void ParameterDeclaration::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classParameterDeclaration_a7e9679286d169930445a159abd5e42ad}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classParameterDeclaration_a80ec2ae28260deaa1925f3de51c620a8}{
+\index{ParameterDeclaration@{ParameterDeclaration}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ ParameterDeclaration::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_a80ec2ae28260deaa1925f3de51c620a8}
+Return a pointer to the symbol table ENTRY representing this parameter This value may be undefined before the symbol table is created.
+
+\begin{DoxyReturn}{Returns}
+a pointer to the symbol table ENTRY representing this parameter 
+\end{DoxyReturn}
+\hypertarget{classParameterDeclaration_ae8b4050a45ff9671d5bc4020ce8a921f}{
+\index{ParameterDeclaration@{ParameterDeclaration}!getName@{getName}}
+\index{getName@{getName}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ParameterDeclaration::getName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_ae8b4050a45ff9671d5bc4020ce8a921f}
+Return the parameter name.
+
+\begin{DoxyReturn}{Returns}
+string representing the parameter name. 
+\end{DoxyReturn}
+\hypertarget{classParameterDeclaration_a68cbaf66b6aa35c05fc30f236321829a}{
+\index{ParameterDeclaration@{ParameterDeclaration}!getType@{getType}}
+\index{getType@{getType}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}int ParameterDeclaration::getType ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_a68cbaf66b6aa35c05fc30f236321829a}
+Return the type of this \hyperlink{classParameterDeclaration}{ParameterDeclaration}.
+
+\begin{DoxyReturn}{Returns}
+an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. 
+\end{DoxyReturn}
+\hypertarget{classParameterDeclaration_a8b07142bec67be6eccd2bdf3147fb5a2}{
+\index{ParameterDeclaration@{ParameterDeclaration}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void ParameterDeclaration::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_a8b07142bec67be6eccd2bdf3147fb5a2}
+Set the pointer to the symbol table ENTRY representing this parameter. This value will typically be set during the symbol table construction phase.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]the pointer to the symbol table ENTRY representing this parameter \end{DoxyParams}
+\hypertarget{classParameterDeclaration_a1883647c68399feaffb9531e27b85bb2}{
+\index{ParameterDeclaration@{ParameterDeclaration}!setName@{setName}}
+\index{setName@{setName}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void ParameterDeclaration::setName (const char $\ast$ {\em nm})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_a1883647c68399feaffb9531e27b85bb2}
+Set the parameter name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nm}]a string representing the new name of the parameter \end{DoxyParams}
+\hypertarget{classParameterDeclaration_aee125114f14e0bcfaa15753d6b1379cf}{
+\index{ParameterDeclaration@{ParameterDeclaration}!setType@{setType}}
+\index{setType@{setType}!ParameterDeclaration@{ParameterDeclaration}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void ParameterDeclaration::setType (int {\em tp})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParameterDeclaration_aee125114f14e0bcfaa15753d6b1379cf}
+Set the new type of this \hyperlink{classParameterDeclaration}{ParameterDeclaration}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]an integer value representing the type, as defined in the \hyperlink{classAstNode}{AstNode} class. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+ParameterDeclaration.h\end{DoxyCompactItemize}

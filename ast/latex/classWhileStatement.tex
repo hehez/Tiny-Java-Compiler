@@ -1,0 +1,102 @@
+\hypertarget{classWhileStatement}{
+\section{WhileStatement Class Reference}
+\label{classWhileStatement}\index{WhileStatement@{WhileStatement}}
+}
+
+
+This class represents a TinyJava WHILE statement.  
+
+
+{\ttfamily \#include $<$WhileStmt.h$>$}Inheritance diagram for WhileStatement::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classWhileStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWhileStatement_ab75b71383a4c7f1c8ad103cab6f02b10}{WhileStatement} (int lno, \hyperlink{classExpression}{Expression} $\ast$e, \hyperlink{classStatement}{Statement} $\ast$b)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classWhileStatement_a8ccd99538f16bc15feb7f7eff947a923}{getExpression} ()
+\item 
+\hyperlink{classStatement}{Statement} $\ast$ \hyperlink{classWhileStatement_a68631c014236d2a635aa4395c6dd229c}{getBodyStatement} ()
+\item 
+void \hyperlink{classWhileStatement_abde6377670b22bad622f1a2ec2aade65}{setBodyStatement} (\hyperlink{classStatement}{Statement} $\ast$b)
+\item 
+void \hyperlink{classWhileStatement_aeb7e6e61053a3e8a7b82a54c4eb8bf0d}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava WHILE statement. A while statement is represented by:
+\begin{DoxyItemize}
+\item a control \hyperlink{classExpression}{Expression} representation
+\item the while loop body \hyperlink{classStatement}{Statement} representation 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classWhileStatement_ab75b71383a4c7f1c8ad103cab6f02b10}{
+\index{WhileStatement@{WhileStatement}!WhileStatement@{WhileStatement}}
+\index{WhileStatement@{WhileStatement}!WhileStatement@{WhileStatement}}
+\subsubsection[{WhileStatement}]{\setlength{\rightskip}{0pt plus 5cm}WhileStatement::WhileStatement (int {\em lno}, \/  {\bf Expression} $\ast$ {\em e}, \/  {\bf Statement} $\ast$ {\em b})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classWhileStatement_ab75b71383a4c7f1c8ad103cab6f02b10}
+Create a new \hyperlink{classWhileStatement}{WhileStatement} object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the while statement (should be the beginning of the while statement) \item[{\em e}]a pointer to the control \hyperlink{classExpression}{Expression} syntax tree \item[{\em b}]a pointer to the \hyperlink{classStatement}{Statement} body syntax tree \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if either the e or b argument is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWhileStatement_aeb7e6e61053a3e8a7b82a54c4eb8bf0d}{
+\index{WhileStatement@{WhileStatement}!accept@{accept}}
+\index{accept@{accept}!WhileStatement@{WhileStatement}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void WhileStatement::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classWhileStatement_aeb7e6e61053a3e8a7b82a54c4eb8bf0d}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classWhileStatement_a68631c014236d2a635aa4395c6dd229c}{
+\index{WhileStatement@{WhileStatement}!getBodyStatement@{getBodyStatement}}
+\index{getBodyStatement@{getBodyStatement}!WhileStatement@{WhileStatement}}
+\subsubsection[{getBodyStatement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Statement}$\ast$ WhileStatement::getBodyStatement ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classWhileStatement_a68631c014236d2a635aa4395c6dd229c}
+Return the body of this while statement
+
+\begin{DoxyReturn}{Returns}
+pointer to a \hyperlink{classStatement}{Statement} representing the body of the while statement 
+\end{DoxyReturn}
+\hypertarget{classWhileStatement_a8ccd99538f16bc15feb7f7eff947a923}{
+\index{WhileStatement@{WhileStatement}!getExpression@{getExpression}}
+\index{getExpression@{getExpression}!WhileStatement@{WhileStatement}}
+\subsubsection[{getExpression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ WhileStatement::getExpression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classWhileStatement_a8ccd99538f16bc15feb7f7eff947a923}
+Return the control \hyperlink{classExpression}{Expression} of this while statement
+
+\begin{DoxyReturn}{Returns}
+pointer to an \hyperlink{classExpression}{Expression} representing the control expression 
+\end{DoxyReturn}
+\hypertarget{classWhileStatement_abde6377670b22bad622f1a2ec2aade65}{
+\index{WhileStatement@{WhileStatement}!setBodyStatement@{setBodyStatement}}
+\index{setBodyStatement@{setBodyStatement}!WhileStatement@{WhileStatement}}
+\subsubsection[{setBodyStatement}]{\setlength{\rightskip}{0pt plus 5cm}void WhileStatement::setBodyStatement ({\bf Statement} $\ast$ {\em b})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classWhileStatement_abde6377670b22bad622f1a2ec2aade65}
+Set the the body of this while statement
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em b}]a pointer to a \hyperlink{classStatement}{Statement} representing the body of the while statement \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+WhileStmt.h\end{DoxyCompactItemize}

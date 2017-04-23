@@ -1,0 +1,131 @@
+\hypertarget{classAssignStatement}{
+\section{AssignStatement Class Reference}
+\label{classAssignStatement}\index{AssignStatement@{AssignStatement}}
+}
+
+
+This class represents a TinyJava assignment statement.  
+
+
+{\ttfamily \#include $<$AssignStmt.h$>$}Inheritance diagram for AssignStatement::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classAssignStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAssignStatement_ad2cc7d861f58d9ebe7302aeca01975fb}{AssignStatement} (int lineNo, const char $\ast$lhsName, \hyperlink{classExpression}{Expression} $\ast$rhs)
+\item 
+\hyperlink{classAssignStatement_a54299cdd3f930c738a74bbff01200d9d}{AssignStatement} (int lineNo, const char $\ast$lhsName, \hyperlink{classExpression}{Expression} $\ast$idx, \hyperlink{classExpression}{Expression} $\ast$rhs)
+\item 
+const char $\ast$ \hyperlink{classAssignStatement_a9c6b348f0bcd4ca190414710ddeb085f}{getLHSName} ()
+\item 
+ENTRY $\ast$ \hyperlink{classAssignStatement_a4b640ab15accc35753ef8ae72c7b90fc}{getEntry} ()
+\item 
+void \hyperlink{classAssignStatement_a8a0b32169f7557553d24582f5b893ba2}{setEntry} (ENTRY $\ast$e)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classAssignStatement_a89a46624c82d07ce4b4f4819c2d7df81}{getIndex} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classAssignStatement_a488cf9857d458c808b97471a1a3789df}{getExpression} ()
+\item 
+void \hyperlink{classAssignStatement_a178a2773781301e16eebfd3d420dc98d}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava assignment statement. An assignment statement has:
+\begin{DoxyItemize}
+\item a left-\/hand side, which may be a simple name (a variable, parameter, or a class field), or an array reference with a subscript expression. A pointer to the symbol table ENTRY for the name may also be included.
+\item a right-\/hand side, which is an expression.
+\end{DoxyItemize}
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAssignStatement_ad2cc7d861f58d9ebe7302aeca01975fb}{
+\index{AssignStatement@{AssignStatement}!AssignStatement@{AssignStatement}}
+\index{AssignStatement@{AssignStatement}!AssignStatement@{AssignStatement}}
+\subsubsection[{AssignStatement}]{\setlength{\rightskip}{0pt plus 5cm}AssignStatement::AssignStatement (int {\em lineNo}, \/  const char $\ast$ {\em lhsName}, \/  {\bf Expression} $\ast$ {\em rhs})}}
+\label{classAssignStatement_ad2cc7d861f58d9ebe7302aeca01975fb}
+Create a assignment statement node, where the left-\/hand side is a simple variable, parameter, or a class field. 
+\begin{DoxyParams}{Parameters}
+\item[{\em lineNo}]is a source line number with the assignment statement \item[{\em lhsName}]is the name on the left-\/hand side of this assignment \item[{\em rhs}]is a pointer to an expression node representing the right-\/hand side expression \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the lhs or the rhs is NULL \end{DoxyExceptions}
+\hypertarget{classAssignStatement_a54299cdd3f930c738a74bbff01200d9d}{
+\index{AssignStatement@{AssignStatement}!AssignStatement@{AssignStatement}}
+\index{AssignStatement@{AssignStatement}!AssignStatement@{AssignStatement}}
+\subsubsection[{AssignStatement}]{\setlength{\rightskip}{0pt plus 5cm}AssignStatement::AssignStatement (int {\em lineNo}, \/  const char $\ast$ {\em lhsName}, \/  {\bf Expression} $\ast$ {\em idx}, \/  {\bf Expression} $\ast$ {\em rhs})}}
+\label{classAssignStatement_a54299cdd3f930c738a74bbff01200d9d}
+Create a assignment statement node, where the left-\/hand side is a simple variable, parameter, or a class field. 
+\begin{DoxyParams}{Parameters}
+\item[{\em lineNo}]is a source line number. \item[{\em lhsName}]is the name on the left-\/hand side of this assignment. \item[{\em idx}]is a pointer to an expression node representing the index (subscript) expression. \item[{\em rhs}]is a pointer to an expression node representing the right-\/hand side expression. \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the lhs or the rhs is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAssignStatement_a178a2773781301e16eebfd3d420dc98d}{
+\index{AssignStatement@{AssignStatement}!accept@{accept}}
+\index{accept@{accept}!AssignStatement@{AssignStatement}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void AssignStatement::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classAssignStatement_a178a2773781301e16eebfd3d420dc98d}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classAssignStatement_a4b640ab15accc35753ef8ae72c7b90fc}{
+\index{AssignStatement@{AssignStatement}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!AssignStatement@{AssignStatement}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ AssignStatement::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAssignStatement_a4b640ab15accc35753ef8ae72c7b90fc}
+Return the symbol table entry representing the left-\/hand side of this assignment. \begin{DoxyReturn}{Returns}
+ENTRY pointer to the symbol table. 
+\end{DoxyReturn}
+\hypertarget{classAssignStatement_a488cf9857d458c808b97471a1a3789df}{
+\index{AssignStatement@{AssignStatement}!getExpression@{getExpression}}
+\index{getExpression@{getExpression}!AssignStatement@{AssignStatement}}
+\subsubsection[{getExpression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ AssignStatement::getExpression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAssignStatement_a488cf9857d458c808b97471a1a3789df}
+Return the expression pointer representing the right-\/hand side of this assignment. \begin{DoxyReturn}{Returns}
+\hyperlink{classExpression}{Expression} pointer representing the right-\/hand side expression. 
+\end{DoxyReturn}
+\hypertarget{classAssignStatement_a89a46624c82d07ce4b4f4819c2d7df81}{
+\index{AssignStatement@{AssignStatement}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!AssignStatement@{AssignStatement}}
+\subsubsection[{getIndex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ AssignStatement::getIndex ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAssignStatement_a89a46624c82d07ce4b4f4819c2d7df81}
+Return the index expression, if the left hand side is an array element.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classExpression}{Expression} pointer representing the array index (subscript). 
+\end{DoxyReturn}
+\hypertarget{classAssignStatement_a9c6b348f0bcd4ca190414710ddeb085f}{
+\index{AssignStatement@{AssignStatement}!getLHSName@{getLHSName}}
+\index{getLHSName@{getLHSName}!AssignStatement@{AssignStatement}}
+\subsubsection[{getLHSName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ AssignStatement::getLHSName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAssignStatement_a9c6b348f0bcd4ca190414710ddeb085f}
+Return the identifier (variable, field, or parameter) on the left hand side of this assignment statement. \begin{DoxyReturn}{Returns}
+const char $\ast$ pointer to the left-\/hand side identifier. 
+\end{DoxyReturn}
+\hypertarget{classAssignStatement_a8a0b32169f7557553d24582f5b893ba2}{
+\index{AssignStatement@{AssignStatement}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!AssignStatement@{AssignStatement}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void AssignStatement::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAssignStatement_a8a0b32169f7557553d24582f5b893ba2}
+Set the symbol table entry representing the left-\/hand side of this assignment.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]is the new pointer to the symbol table. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AssignStmt.h\item 
+AssignStmt.cpp\end{DoxyCompactItemize}

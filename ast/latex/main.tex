@@ -1,0 +1,81 @@
+\hypertarget{main_section_toc}{}\section{Abstract Syntax Tree Library for TinyJava}\label{main_section_toc}
+\hypertarget{main_OVERVIEW}{}\subsection{Overview}\label{main_OVERVIEW}
+The AST Libary can be used to create an then traverse abstract syntax trees representing TinyJava programs. The construction of an abstract syntax tree is performed during parsing, by placing suitable AST Library constructor (and other method) calls within the semantic actions of a Bison or YACC specification file for TinyJava.
+
+The root of the syntax tree for a TinyJava program is a node representing the description of the class declaration included in the program.\hypertarget{main_NODETYPES}{}\subsection{Abstract Syntax Tree Node Types}\label{main_NODETYPES}
+The \hyperlink{classAstNode}{AstNode} class is the root of the syntax tree classes hierarchy. The class has three direct subclasses: \hyperlink{classDeclaration}{Declaration}, \hyperlink{classExpression}{Expression}, and \hyperlink{classStatement}{Statement}, which subdivide the remaining classes into three sections: TinyJava declarations, expressions, and statements, respectively. The four classes mentioned above (\hyperlink{classAstNode}{AstNode}, \hyperlink{classDeclaration}{Declaration}, \hyperlink{classExpression}{Expression}, and \hyperlink{classStatement}{Statement}) are abstract and therefore are not intended to have any instances.
+
+The AST Library has a number of concrete classes intended to represent all syntactic constructs of TinyJava.
+
+Subclasses of the \hyperlink{classDeclaration}{Declaration} class include:
+\begin{DoxyItemize}
+\item \hyperlink{classClassDeclaration}{ClassDeclaration}, which represents a class declaration, including its name and member Declarations, each of which must be either a \hyperlink{classFieldDeclaration}{FieldDeclaration} or a \hyperlink{classMethodDeclaration}{MethodDeclaration}.
+\item \hyperlink{classFieldDeclaration}{FieldDeclaration}, which represents a declaration of a class field, including its name, an initialization literal, and type, as described in \hyperlink{main_TYPES}{Types and operators in Abstract Syntax Trees}
+\item \hyperlink{classMethodDeclaration}{MethodDeclaration}, which represents a method declaration, including its name, return type, parameters (\hyperlink{classParameterDeclaration}{ParameterDeclaration}), local variables (\hyperlink{classVariableDeclaration}{VariableDeclaration}) and a \hyperlink{classBlockStatement}{BlockStatement}, representing the method body
+\item \hyperlink{classParameterDeclaration}{ParameterDeclaration}, which represents a declaration of a formal parameter of a method, including its name and type, and
+\item \hyperlink{classVariableDeclaration}{VariableDeclaration}, which represents a declaration of a local variable in a method, including its name, type and an initialization.
+\end{DoxyItemize}
+
+Subclasses of the \hyperlink{classExpression}{Expression} class include:
+\begin{DoxyItemize}
+\item \hyperlink{classLiteralExpression}{LiteralExpression}, which represents a literal, represented by the literal string and the literal type
+\item \hyperlink{classReferenceExpression}{ReferenceExpression}, which represents an identifier reference, including the identifier and a symbol table ENTRY pointer
+\item \hyperlink{classUnaryExpression}{UnaryExpression}, which represents a unary expression, including an operand \hyperlink{classExpression}{Expression} and a unary (prefix or postfix) operator, as defined in \hyperlink{main_TYPES}{Types and operators in Abstract Syntax Trees}
+\item \hyperlink{classBinaryExpression}{BinaryExpression}, which represents a binary expression, including two operands (of type \hyperlink{classExpression}{Expression}) and a binary operator
+\item \hyperlink{classCastExpression}{CastExpression}, which represents a type cast expression, including a type of the cast and an operand \hyperlink{classExpression}{Expression}
+\item \hyperlink{classMethodCallExpression}{MethodCallExpression}, which represents a method call expression, including the method name and the arguments, each of type \hyperlink{classExpression}{Expression}
+\item \hyperlink{classNewExpression}{NewExpression}, which represents a new expression (used for array creation), including the base type and an \hyperlink{classExpression}{Expression} specifying the array size.
+\end{DoxyItemize}
+
+Finally, subclasses of the \hyperlink{classStatement}{Statement} class include:
+\begin{DoxyItemize}
+\item \hyperlink{classAssignStatement}{AssignStatement}, which represents an assignment statement
+\item \hyperlink{classBlockStatement}{BlockStatement}, which represents a block statement
+\item \hyperlink{classEmptyStatement}{EmptyStatement}, which represents an empty statement
+\item \hyperlink{classForStatement}{ForStatement}, which represents a FOR statement
+\item \hyperlink{classIfStatement}{IfStatement}, which represents IF statement
+\item \hyperlink{classMethodCallStatement}{MethodCallStatement}, which represents method call statement
+\item \hyperlink{classReturnStatement}{ReturnStatement}, which represents a return statement node in an abstract syntax tree
+\item \hyperlink{classWhileStatement}{WhileStatement}, which represents a while statement
+\end{DoxyItemize}
+
+Some of the above (concrete) classes, for example \hyperlink{classReferenceExpression}{ReferenceExpression}, can represent a pointer to the symbol table entry corresponding to the represented element. The type of the symbol table entry is defined as a pre-\/processor macro called ENTRY and it should be a legal C++ class. The AST library is not making any assumptions as to the representation of the symbol table entry or its interface, except that it is a class. The default value of the macro is Entry. If your symbol table entry is a different class, you should define the ENTRY macro accordingly and place the definition before you include the Ast.h file.\hypertarget{main_TYPES}{}\subsection{Types and operators in Abstract Syntax Trees}\label{main_TYPES}
+TinyJava types and operators are represented as public constants defined in the \hyperlink{classAstNode}{AstNode} class. These constants can be used in your symbol table entries for field types, method return types and formal parameter types, as well as the types of local variables.
+
+The \hyperlink{classAstNode}{AstNode} class defines a number int constants that represent TinyJava types. These include:
+\begin{DoxyItemize}
+\item \hyperlink{classAstNode_ac664e0864b9c856e947d5fde632eb5e7}{AstNode::TVOID} (void type representation)
+\item \hyperlink{classAstNode_a8568313f5d280773a446280c94d382f8}{AstNode::TINT} (int type representation)
+\item \hyperlink{classAstNode_abf470f775bd7a7bfc2c0610716054339}{AstNode::TFLOAT} (float type representation)
+\item \hyperlink{classAstNode_a71904f4c33eff3bb3a37fadda88f12c9}{AstNode::TBOOL} (boolean type representation)
+\item \hyperlink{classAstNode_a2245a2aec841592ecddf8f9497306a4b}{AstNode::TSTRING} (String type representation)
+\item \hyperlink{classAstNode_a7233043e1a9d95c3120a62ac66c89608}{AstNode::TINTA} (int\mbox{[}\mbox{]} type representation)
+\item \hyperlink{classAstNode_a9d01a6ac8a4a7a5b2d4a3ec8a7e93fa7}{AstNode::TFLOATA} (float\mbox{[}\mbox{]} type representation)
+\item \hyperlink{classAstNode_ae3a9310b89b8c86afe245cf88ab1369a}{AstNode::TSTRINGA} (String\mbox{[}\mbox{]} type representation)
+\item \hyperlink{classAstNode_ad84a595b7727d93d325664d5bf89c766}{AstNode::TREF} (basic reference type representation, to be used for null expression type)
+\end{DoxyItemize}
+
+Also, the \hyperlink{classAstNode}{AstNode} class defines a number of public constants that represent TinyJava operators. These include:
+\begin{DoxyItemize}
+\item \hyperlink{classAstNode_af908b13b6954116a438f86ce595d5bfe}{AstNode::ADDOP}, which represents the \char`\"{}+\char`\"{} operator (prefix or infix)
+\item \hyperlink{classAstNode_a8d62c361a16d84b762172fac68650561}{AstNode::SUBOP}, which represents the \char`\"{}-\/\char`\"{} operator (prefix or infix)
+\item \hyperlink{classAstNode_af1564bffc1a770122ea56654f4439531}{AstNode::MULOP}, which represents the \char`\"{}$\ast$\char`\"{} operator
+\item \hyperlink{classAstNode_a3972892cd58f1c70c84366804bdfd371}{AstNode::DIVOP}, which represents the \char`\"{}$\ast$\char`\"{} operator
+\item \hyperlink{classAstNode_a9cb6a842a496aed85756aa779789ce77}{AstNode::EQOP}, which represents the \char`\"{}==\char`\"{} operator
+\item \hyperlink{classAstNode_a3347eacf3e38675c075a7ce1c4cb6e29}{AstNode::NEOP}, which represents the \char`\"{}!=\char`\"{} operator
+\item \hyperlink{classAstNode_a1ddf9dbcce4b80d311e7080b8262b65b}{AstNode::LTOP}, which represents the \char`\"{}$<$\char`\"{} operator
+\item \hyperlink{classAstNode_a3103a273c9da38b092334c757ee19ace}{AstNode::GTOP}, which represents the \char`\"{}$>$\char`\"{} operator
+\item \hyperlink{classAstNode_ac62da8b0313271a74293826f586dd6ea}{AstNode::LEOP}, which represents the \char`\"{}$<$=\char`\"{} operator
+\item \hyperlink{classAstNode_aeb92e9f6e1407ff0c945f220b3da9820}{AstNode::GEOP}, which represents the \char`\"{}$>$=$\ast$\char`\"{} operator
+\item \hyperlink{classAstNode_abf9092d925819312d2547c414b493c4f}{AstNode::INCOP}, which represents the \char`\"{}++\char`\"{} operator (postfix), and
+\item \hyperlink{classAstNode_a0a48e47b23689fb51c059cb48a007adc}{AstNode::DECOP}, which represents the \char`\"{}-\/-\/\char`\"{} operator (postfix).
+\end{DoxyItemize}\hypertarget{main_EXCEPTIONS}{}\subsection{Abstract Syntax Trees exceptions}\label{main_EXCEPTIONS}
+The \hyperlink{classAstException}{AstException} class is used to represent some problem within the library. If one of the available AST Library constructors or other methods throws an \hyperlink{classAstException}{AstException}, the message indicates the type of the problem encountered.\hypertarget{main_VISITORS}{}\subsection{Abstract Syntax Trees visitors}\label{main_VISITORS}
+The AST Libary provides the \hyperlink{classAstVisitor}{AstVisitor} class, which is the base abstract class for implementing a variety of visitors to abstract syntax trees representing TinyJava programs. The vistors follow the well-\/known \href{http://sourcemaking.com/design_patterns/visitor}{\tt Visitor Design Pattern}. The \hyperlink{classAstVisitor}{AstVisitor} class provides a number of pure virtual methods, one for each of the concrete classes included in the \hyperlink{classAstNode}{AstNode} hierarchy.
+
+Once an abstract syntax tree for a TinyJava class has been created, specialized visitors can print out the entire synatx tree (for debugging purposes), construct the symbol table for the program, perform its semantic analysis, and finally generate the intermediate code.
+
+The AST Library includes a simple PrintVisitor class. This class illustrates how to perform a traversal of the entire syntax tree. Additional visitors can be implemented in a similar fashion.\hypertarget{main_USING}{}\subsection{Using the AST Library}\label{main_USING}
+You may copy the source code of the AST Library into your own space and use make to compile the library. Alternatively, you may use a copy of the library on nike, which is in my directory /home/profs/kochut/csx570/ast. You should use appropriate options on your g++ compilation commands (for example, -\/I, -\/L and -\/l) to use the library. After compilation, the AST Library directory should contain the library file called libAst.so, which is a shared object. Additional explanations will be provided in class.
+
+In order to use the library, you should include the header file Ast.h, for example in your Bison specification file for TinyJava. If you would like to store references to your symbol table entries in a syntax tree, and if your symbol table entry class is not called Entry (upper case E), you should define the ENTRY macro ahead of the include \char`\"{}Ast.h\char`\"{} directive. 

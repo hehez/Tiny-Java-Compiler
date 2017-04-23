@@ -1,0 +1,71 @@
+\hypertarget{classMethodCallStatement}{
+\section{MethodCallStatement Class Reference}
+\label{classMethodCallStatement}\index{MethodCallStatement@{MethodCallStatement}}
+}
+
+
+This class represents a TinyJava method call statement.  
+
+
+{\ttfamily \#include $<$MethodCallStmt.h$>$}Inheritance diagram for MethodCallStatement::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classMethodCallStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMethodCallStatement_aa0ebf89fb7b2a464aed2685070578279}{MethodCallStatement} (int lno, \hyperlink{classExpression}{Expression} $\ast$e)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classMethodCallStatement_ab19af10f9dd979693f1714baf6f6e10f}{getExpression} ()
+\item 
+void \hyperlink{classMethodCallStatement_a4bbae8f172868a47ba651f436087e16f}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava method call statement. A method call statement node is a \char`\"{}wrapper\char`\"{} class used to represent a method call expression as a statement. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMethodCallStatement_aa0ebf89fb7b2a464aed2685070578279}{
+\index{MethodCallStatement@{MethodCallStatement}!MethodCallStatement@{MethodCallStatement}}
+\index{MethodCallStatement@{MethodCallStatement}!MethodCallStatement@{MethodCallStatement}}
+\subsubsection[{MethodCallStatement}]{\setlength{\rightskip}{0pt plus 5cm}MethodCallStatement::MethodCallStatement (int {\em lno}, \/  {\bf Expression} $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallStatement_aa0ebf89fb7b2a464aed2685070578279}
+Createa a new \hyperlink{classMethodCallStatement}{MethodCallStatement} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the method call statement. \item[{\em e}]a pointer to an \hyperlink{classExpression}{Expression} representing the \hyperlink{classMethodCallExpression}{MethodCallExpression} \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the e (\hyperlink{classExpression}{Expression}) argument is NULL or if it is not a \hyperlink{classMethodCallExpression}{MethodCallExpression} \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMethodCallStatement_a4bbae8f172868a47ba651f436087e16f}{
+\index{MethodCallStatement@{MethodCallStatement}!accept@{accept}}
+\index{accept@{accept}!MethodCallStatement@{MethodCallStatement}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void MethodCallStatement::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classMethodCallStatement_a4bbae8f172868a47ba651f436087e16f}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classMethodCallStatement_ab19af10f9dd979693f1714baf6f6e10f}{
+\index{MethodCallStatement@{MethodCallStatement}!getExpression@{getExpression}}
+\index{getExpression@{getExpression}!MethodCallStatement@{MethodCallStatement}}
+\subsubsection[{getExpression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ MethodCallStatement::getExpression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallStatement_ab19af10f9dd979693f1714baf6f6e10f}
+Return the \hyperlink{classMethodCallExpression}{MethodCallExpression} of this \hyperlink{classMethodCallStatement}{MethodCallStatement}
+
+\begin{DoxyReturn}{Returns}
+a pointer to an \hyperlink{classExpression}{Expression} representing the \hyperlink{classMethodCallExpression}{MethodCallExpression} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+MethodCallStmt.h\end{DoxyCompactItemize}

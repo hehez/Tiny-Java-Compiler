@@ -1,0 +1,208 @@
+\hypertarget{classForStatement}{
+\section{ForStatement Class Reference}
+\label{classForStatement}\index{ForStatement@{ForStatement}}
+}
+
+
+This class represents a TinyJava FOR statement.  
+
+
+{\ttfamily \#include $<$ForStmt.h$>$}Inheritance diagram for ForStatement::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classForStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classForStatement_a34f22456bd665a1d358716e7e71a2eb1}{ForStatement} (int lno, const char $\ast$n, \hyperlink{classExpression}{Expression} $\ast$i, \hyperlink{classExpression}{Expression} $\ast$t, \hyperlink{classExpression}{Expression} $\ast$u, \hyperlink{classStatement}{Statement} $\ast$b)
+\item 
+\hyperlink{classForStatement_a203c223b6af97279d479734239c76604}{ForStatement} (int lno, const char $\ast$n, \hyperlink{classExpression}{Expression} $\ast$x, \hyperlink{classExpression}{Expression} $\ast$i, \hyperlink{classExpression}{Expression} $\ast$t, \hyperlink{classExpression}{Expression} $\ast$u, \hyperlink{classStatement}{Statement} $\ast$b)
+\item 
+const char $\ast$ \hyperlink{classForStatement_a15ffa4871bab8d925468d7171e621562}{getLHSName} ()
+\item 
+ENTRY $\ast$ \hyperlink{classForStatement_a42b0ef907ad4181b001392c7cb496cdf}{getEntry} ()
+\item 
+void \hyperlink{classForStatement_a1634064d332150b7a62ac40813776f84}{setEntry} (ENTRY $\ast$e)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classForStatement_a69d2324b4aa27a7bb286e5dfcbebe2bf}{getIndex} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classForStatement_a114c3ab74b627e7dcf33868864596d97}{getInit} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classForStatement_a7ecbeae3c4766ceb9510e02740284467}{getTerm} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classForStatement_a81f61002e628cff42005f4dce5c477f2}{getUpd} ()
+\item 
+\hyperlink{classStatement}{Statement} $\ast$ \hyperlink{classForStatement_ae52531005fd0fd8cb5e19bba89679548}{getBodyStatement} ()
+\item 
+void \hyperlink{classForStatement_af81e95d20aa9fe2e84cf1611845653bb}{setBodyStatement} (\hyperlink{classStatement}{Statement} $\ast$b)
+\item 
+void \hyperlink{classForStatement_a8d31a952806bc123a2f6227d4aa17f2f}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava FOR statement. The syntax of the for statement is either
+\begin{DoxyItemize}
+\item FOR '(' IDENT '=' initExpression ';' termExpression ';' updateExpression ')' statement
+\end{DoxyItemize}
+
+or
+
+
+\begin{DoxyItemize}
+\item FOR '(' IDENT '\mbox{[}' indexExpression '\mbox{]}' '=' initExpression ';' termExpression ';' updateExpression ')' statement
+\end{DoxyItemize}
+
+A for statement is represented by:
+\begin{DoxyItemize}
+\item identifier on the left-\/hand side of the initialization expression
+\item an index \hyperlink{classExpression}{Expression}, if the left hand side is an array element
+\item an initialization \hyperlink{classExpression}{Expression}
+\item a termination \hyperlink{classExpression}{Expression}
+\item an update \hyperlink{classExpression}{Expression}, and
+\item a for statement body, that is another \hyperlink{classStatement}{Statement}. A symbol table ENTRY pointer may be provided, as well.
+\end{DoxyItemize}
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classForStatement_a34f22456bd665a1d358716e7e71a2eb1}{
+\index{ForStatement@{ForStatement}!ForStatement@{ForStatement}}
+\index{ForStatement@{ForStatement}!ForStatement@{ForStatement}}
+\subsubsection[{ForStatement}]{\setlength{\rightskip}{0pt plus 5cm}ForStatement::ForStatement (int {\em lno}, \/  const char $\ast$ {\em n}, \/  {\bf Expression} $\ast$ {\em i}, \/  {\bf Expression} $\ast$ {\em t}, \/  {\bf Expression} $\ast$ {\em u}, \/  {\bf Statement} $\ast$ {\em b})}}
+\label{classForStatement_a34f22456bd665a1d358716e7e71a2eb1}
+Create a new \hyperlink{classForStatement}{ForStatement} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the for statement (should be the beginning of the for statement) \item[{\em n}]a string representing the name on the left-\/hand side of the initialization expression \item[{\em i}]a pointer to an \hyperlink{classExpression}{Expression} representing the initialization expression \item[{\em t}]a pointer to an \hyperlink{classExpression}{Expression} representing the termination expression \item[{\em u}]a pointer to an \hyperlink{classExpression}{Expression} representing the update expression \item[{\em b}]a pointer to a \hyperlink{classStatement}{Statement} representing the for statement body \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if either the n, i, t, u, or b argument is NULL \end{DoxyExceptions}
+\hypertarget{classForStatement_a203c223b6af97279d479734239c76604}{
+\index{ForStatement@{ForStatement}!ForStatement@{ForStatement}}
+\index{ForStatement@{ForStatement}!ForStatement@{ForStatement}}
+\subsubsection[{ForStatement}]{\setlength{\rightskip}{0pt plus 5cm}ForStatement::ForStatement (int {\em lno}, \/  const char $\ast$ {\em n}, \/  {\bf Expression} $\ast$ {\em x}, \/  {\bf Expression} $\ast$ {\em i}, \/  {\bf Expression} $\ast$ {\em t}, \/  {\bf Expression} $\ast$ {\em u}, \/  {\bf Statement} $\ast$ {\em b})}}
+\label{classForStatement_a203c223b6af97279d479734239c76604}
+Create a new \hyperlink{classForStatement}{ForStatement} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the for statement (should be the beginning of the for statement) \item[{\em n}]a string representing the name on the left-\/hand side of the initialization expression \item[{\em x}]a pointer to an \hyperlink{classExpression}{Expression} representing the index (subscript) expression, if the left hand side is an array elemnt \item[{\em i}]a pointer to an \hyperlink{classExpression}{Expression} representing the initialization expression \item[{\em t}]a pointer to an \hyperlink{classExpression}{Expression} representing the termination expression \item[{\em u}]a pointer to an \hyperlink{classExpression}{Expression} representing the update expression \item[{\em b}]a pointer to a \hyperlink{classStatement}{Statement} representing the for statement body \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if either the n, x, i, t, u, or b argument is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classForStatement_a8d31a952806bc123a2f6227d4aa17f2f}{
+\index{ForStatement@{ForStatement}!accept@{accept}}
+\index{accept@{accept}!ForStatement@{ForStatement}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void ForStatement::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classForStatement_a8d31a952806bc123a2f6227d4aa17f2f}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classForStatement_ae52531005fd0fd8cb5e19bba89679548}{
+\index{ForStatement@{ForStatement}!getBodyStatement@{getBodyStatement}}
+\index{getBodyStatement@{getBodyStatement}!ForStatement@{ForStatement}}
+\subsubsection[{getBodyStatement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Statement}$\ast$ ForStatement::getBodyStatement ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_ae52531005fd0fd8cb5e19bba89679548}
+Return the body of this for statement
+
+\begin{DoxyReturn}{Returns}
+pointer to a \hyperlink{classStatement}{Statement} representing the body of the for statement 
+\end{DoxyReturn}
+\hypertarget{classForStatement_a42b0ef907ad4181b001392c7cb496cdf}{
+\index{ForStatement@{ForStatement}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!ForStatement@{ForStatement}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ ForStatement::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a42b0ef907ad4181b001392c7cb496cdf}
+Return a pointer to the symbol table entry representing the left-\/hand side of the initialization expression.
+
+\begin{DoxyReturn}{Returns}
+ENTRY pointer to the symbol table. 
+\end{DoxyReturn}
+\hypertarget{classForStatement_a69d2324b4aa27a7bb286e5dfcbebe2bf}{
+\index{ForStatement@{ForStatement}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!ForStatement@{ForStatement}}
+\subsubsection[{getIndex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ ForStatement::getIndex ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a69d2324b4aa27a7bb286e5dfcbebe2bf}
+Return the index (subscript) \hyperlink{classExpression}{Expression}, if the left hand side is an array element.
+
+\begin{DoxyReturn}{Returns}
+pointer to an \hyperlink{classExpression}{Expression} representing the array index (subscript). 
+\end{DoxyReturn}
+\hypertarget{classForStatement_a114c3ab74b627e7dcf33868864596d97}{
+\index{ForStatement@{ForStatement}!getInit@{getInit}}
+\index{getInit@{getInit}!ForStatement@{ForStatement}}
+\subsubsection[{getInit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ ForStatement::getInit ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a114c3ab74b627e7dcf33868864596d97}
+Return the initialization \hyperlink{classExpression}{Expression} of this for statement
+
+\begin{DoxyReturn}{Returns}
+pointer to an \hyperlink{classExpression}{Expression} epresenting the initialization \hyperlink{classExpression}{Expression} 
+\end{DoxyReturn}
+\hypertarget{classForStatement_a15ffa4871bab8d925468d7171e621562}{
+\index{ForStatement@{ForStatement}!getLHSName@{getLHSName}}
+\index{getLHSName@{getLHSName}!ForStatement@{ForStatement}}
+\subsubsection[{getLHSName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ForStatement::getLHSName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a15ffa4871bab8d925468d7171e621562}
+Return the identifier (variable, field, or parameter) on the left hand side of this assignment statement.
+
+\begin{DoxyReturn}{Returns}
+a string representing the left-\/hand side identifier. 
+\end{DoxyReturn}
+\hypertarget{classForStatement_a7ecbeae3c4766ceb9510e02740284467}{
+\index{ForStatement@{ForStatement}!getTerm@{getTerm}}
+\index{getTerm@{getTerm}!ForStatement@{ForStatement}}
+\subsubsection[{getTerm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ ForStatement::getTerm ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a7ecbeae3c4766ceb9510e02740284467}
+Return the termination \hyperlink{classExpression}{Expression} of this for statement
+
+\begin{DoxyReturn}{Returns}
+pointer to an \hyperlink{classExpression}{Expression} epresenting the termination \hyperlink{classExpression}{Expression} 
+\end{DoxyReturn}
+\hypertarget{classForStatement_a81f61002e628cff42005f4dce5c477f2}{
+\index{ForStatement@{ForStatement}!getUpd@{getUpd}}
+\index{getUpd@{getUpd}!ForStatement@{ForStatement}}
+\subsubsection[{getUpd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ ForStatement::getUpd ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a81f61002e628cff42005f4dce5c477f2}
+Return the update \hyperlink{classExpression}{Expression} of this for statement
+
+\begin{DoxyReturn}{Returns}
+pointer to an \hyperlink{classExpression}{Expression} epresenting the update \hyperlink{classExpression}{Expression} 
+\end{DoxyReturn}
+\hypertarget{classForStatement_af81e95d20aa9fe2e84cf1611845653bb}{
+\index{ForStatement@{ForStatement}!setBodyStatement@{setBodyStatement}}
+\index{setBodyStatement@{setBodyStatement}!ForStatement@{ForStatement}}
+\subsubsection[{setBodyStatement}]{\setlength{\rightskip}{0pt plus 5cm}void ForStatement::setBodyStatement ({\bf Statement} $\ast$ {\em b})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_af81e95d20aa9fe2e84cf1611845653bb}
+Set the the body of this for statement
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em b}]a pointer to a \hyperlink{classStatement}{Statement} representing the body of the for statement \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+\hypertarget{classForStatement_a1634064d332150b7a62ac40813776f84}{
+\index{ForStatement@{ForStatement}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!ForStatement@{ForStatement}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void ForStatement::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classForStatement_a1634064d332150b7a62ac40813776f84}
+Set the symbol table ENTRY representing the left-\/hand side of the initialization expression.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]an ENTRY pointer to the new symbol table ENTRY \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ForStmt.h\item 
+ForStmt.cpp\end{DoxyCompactItemize}

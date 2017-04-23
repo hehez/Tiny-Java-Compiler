@@ -1,0 +1,199 @@
+\hypertarget{classMethodCallExpression}{
+\section{MethodCallExpression Class Reference}
+\label{classMethodCallExpression}\index{MethodCallExpression@{MethodCallExpression}}
+}
+
+
+This class represents a TinyJava method call expression.  
+
+
+{\ttfamily \#include $<$MethodCallExpression.h$>$}Inheritance diagram for MethodCallExpression::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classMethodCallExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMethodCallExpression_a5019b48097b4bcddd2016e19e7aa9b21}{MethodCallExpression} (int lno, const char $\ast$className, const char $\ast$methodName, std::vector$<$ \hyperlink{classExpression}{Expression} $\ast$ $>$ $\ast$args)
+\item 
+const char $\ast$ \hyperlink{classMethodCallExpression_aac842be4123a65f75e09dad4369fcdb2}{getClassName} ()
+\item 
+const char $\ast$ \hyperlink{classMethodCallExpression_a53338c550e4f939f8c263f08a52ec8f5}{getMethodName} ()
+\item 
+ENTRY $\ast$ \hyperlink{classMethodCallExpression_acba6b59d3a951124c09bc8222dea1b82}{getEntry} ()
+\item 
+void \hyperlink{classMethodCallExpression_a573fa44f50e5c3c55e0801d726ccf594}{setEntry} (ENTRY $\ast$e)
+\item 
+int \hyperlink{classMethodCallExpression_ac827bda72aa7edd546dc70ba7e4dea7a}{getNoArguments} ()
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classMethodCallExpression_a8fdb332750c263169f163cd15bf2181c}{getArgument} (int pos)
+\item 
+std::vector$<$ \hyperlink{classExpression}{Expression} $\ast$ $>$ $\ast$ \hyperlink{classMethodCallExpression_ac8d64b39cf5cce5ff7baaef80e9c8911}{getArguments} ()
+\item 
+void \hyperlink{classMethodCallExpression_a31c2b10a2914b5a71d16feab9bb96d34}{setArguments} (std::vector$<$ \hyperlink{classExpression}{Expression} $\ast$ $>$ $\ast$args)
+\item 
+void \hyperlink{classMethodCallExpression_a40f6c0c6861cc3ea50253a47a7ec6879}{addArgument} (\hyperlink{classExpression}{Expression} $\ast$argument)
+\item 
+void \hyperlink{classMethodCallExpression_a1930d4df840960e60304da85acc70b63}{prependArgument} (\hyperlink{classExpression}{Expression} $\ast$argument)
+\item 
+void \hyperlink{classMethodCallExpression_a306fe23511d0d35c003a6256816ccea6}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava method call expression. A nethod call expression is represented by:
+\begin{DoxyItemize}
+\item class name, if the referenced method is a static method in a different class
+\item method name; a pointer to the symbol table ENTRY for the name may also be included.
+\item call arguments
+\end{DoxyItemize}
+
+ENTRY should be defined as a macro, and its value should be a class, which is the root of the symbol table entry hierarchy. Its default value is Entry. The macro should be defined at the beginning of the header file Ast.h. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMethodCallExpression_a5019b48097b4bcddd2016e19e7aa9b21}{
+\index{MethodCallExpression@{MethodCallExpression}!MethodCallExpression@{MethodCallExpression}}
+\index{MethodCallExpression@{MethodCallExpression}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{MethodCallExpression}]{\setlength{\rightskip}{0pt plus 5cm}MethodCallExpression::MethodCallExpression (int {\em lno}, \/  const char $\ast$ {\em className}, \/  const char $\ast$ {\em methodName}, \/  std::vector$<$ {\bf Expression} $\ast$ $>$ $\ast$ {\em args})}}
+\label{classMethodCallExpression_a5019b48097b4bcddd2016e19e7aa9b21}
+Create a new \hyperlink{classMethodCallExpression}{MethodCallExpression} object. The default type of this \hyperlink{classExpression}{Expression} is set to \hyperlink{classAstNode_a8568313f5d280773a446280c94d382f8}{AstNode::TINT}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source line number with this method call expression \item[{\em className}]a string representing the class name with the method (if thie is a qualified name) \item[{\em methodName}]a string representing the method name \item[{\em args}]a std::vector of \hyperlink{classExpression}{Expression} pointers, each representing an argument expression \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the methodName is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMethodCallExpression_a306fe23511d0d35c003a6256816ccea6}{
+\index{MethodCallExpression@{MethodCallExpression}!accept@{accept}}
+\index{accept@{accept}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void MethodCallExpression::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classMethodCallExpression_a306fe23511d0d35c003a6256816ccea6}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classMethodCallExpression_a40f6c0c6861cc3ea50253a47a7ec6879}{
+\index{MethodCallExpression@{MethodCallExpression}!addArgument@{addArgument}}
+\index{addArgument@{addArgument}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{addArgument}]{\setlength{\rightskip}{0pt plus 5cm}void MethodCallExpression::addArgument ({\bf Expression} $\ast$ {\em argument})}}
+\label{classMethodCallExpression_a40f6c0c6861cc3ea50253a47a7ec6879}
+Add anther argument to this \hyperlink{classMethodCallExpression}{MethodCallExpression}. The new argument will be the last argumnet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argument}]an \hyperlink{classExpression}{Expression} pointer representing an argument expression \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+\hypertarget{classMethodCallExpression_a8fdb332750c263169f163cd15bf2181c}{
+\index{MethodCallExpression@{MethodCallExpression}!getArgument@{getArgument}}
+\index{getArgument@{getArgument}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{getArgument}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ MethodCallExpression::getArgument (int {\em pos})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_a8fdb332750c263169f163cd15bf2181c}
+Return the specific argument \hyperlink{classExpression}{Expression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pos}]the argument position; the first argument is at position 0 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the \hyperlink{classExpression}{Expression} representing the requested argument of this method call 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the requested argument does not exist, i.e. if the method call has no arguments, or if the pos value is outside of the argument number range \end{DoxyExceptions}
+\hypertarget{classMethodCallExpression_ac8d64b39cf5cce5ff7baaef80e9c8911}{
+\index{MethodCallExpression@{MethodCallExpression}!getArguments@{getArguments}}
+\index{getArguments@{getArguments}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{getArguments}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Expression} $\ast$$>$$\ast$ MethodCallExpression::getArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_ac8d64b39cf5cce5ff7baaef80e9c8911}
+Return all arguments of this \hyperlink{classMethodCallExpression}{MethodCallExpression}
+
+\begin{DoxyReturn}{Returns}
+a pointer to a std::vector of \hyperlink{classExpression}{Expression} pointers, each representing an argument expression 
+\end{DoxyReturn}
+\hypertarget{classMethodCallExpression_aac842be4123a65f75e09dad4369fcdb2}{
+\index{MethodCallExpression@{MethodCallExpression}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{getClassName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ MethodCallExpression::getClassName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_aac842be4123a65f75e09dad4369fcdb2}
+Return the class name of this method call (if a qualified name)
+
+\begin{DoxyReturn}{Returns}
+a string representing the class name 
+\end{DoxyReturn}
+\hypertarget{classMethodCallExpression_acba6b59d3a951124c09bc8222dea1b82}{
+\index{MethodCallExpression@{MethodCallExpression}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{getEntry}]{\setlength{\rightskip}{0pt plus 5cm}ENTRY$\ast$ MethodCallExpression::getEntry ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_acba6b59d3a951124c09bc8222dea1b82}
+Return the symbol table entry for this method
+
+\begin{DoxyReturn}{Returns}
+a pointer to the symbol table entry representing the called method 
+\end{DoxyReturn}
+\hypertarget{classMethodCallExpression_a53338c550e4f939f8c263f08a52ec8f5}{
+\index{MethodCallExpression@{MethodCallExpression}!getMethodName@{getMethodName}}
+\index{getMethodName@{getMethodName}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{getMethodName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ MethodCallExpression::getMethodName ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_a53338c550e4f939f8c263f08a52ec8f5}
+Return the method name of this method call
+
+\begin{DoxyReturn}{Returns}
+a string representing the method name 
+\end{DoxyReturn}
+\hypertarget{classMethodCallExpression_ac827bda72aa7edd546dc70ba7e4dea7a}{
+\index{MethodCallExpression@{MethodCallExpression}!getNoArguments@{getNoArguments}}
+\index{getNoArguments@{getNoArguments}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{getNoArguments}]{\setlength{\rightskip}{0pt plus 5cm}int MethodCallExpression::getNoArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_ac827bda72aa7edd546dc70ba7e4dea7a}
+Return the numbed of arguments in thie method call
+
+\begin{DoxyReturn}{Returns}
+the numbed of arguments in thie method call 
+\end{DoxyReturn}
+\hypertarget{classMethodCallExpression_a1930d4df840960e60304da85acc70b63}{
+\index{MethodCallExpression@{MethodCallExpression}!prependArgument@{prependArgument}}
+\index{prependArgument@{prependArgument}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{prependArgument}]{\setlength{\rightskip}{0pt plus 5cm}void MethodCallExpression::prependArgument ({\bf Expression} $\ast$ {\em argument})}}
+\label{classMethodCallExpression_a1930d4df840960e60304da85acc70b63}
+Add anther argument to this \hyperlink{classMethodCallExpression}{MethodCallExpression}. The new argument will be the first argumnet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argument}]an \hyperlink{classExpression}{Expression} pointer representing an argument expression \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if the argument is NULL \end{DoxyExceptions}
+\hypertarget{classMethodCallExpression_a31c2b10a2914b5a71d16feab9bb96d34}{
+\index{MethodCallExpression@{MethodCallExpression}!setArguments@{setArguments}}
+\index{setArguments@{setArguments}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{setArguments}]{\setlength{\rightskip}{0pt plus 5cm}void MethodCallExpression::setArguments (std::vector$<$ {\bf Expression} $\ast$ $>$ $\ast$ {\em args})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_a31c2b10a2914b5a71d16feab9bb96d34}
+Set the arguments for this \hyperlink{classMethodCallExpression}{MethodCallExpression}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]a pointer to a std::vector of \hyperlink{classExpression}{Expression} pointers, each representing an argument expression \end{DoxyParams}
+\hypertarget{classMethodCallExpression_a573fa44f50e5c3c55e0801d726ccf594}{
+\index{MethodCallExpression@{MethodCallExpression}!setEntry@{setEntry}}
+\index{setEntry@{setEntry}!MethodCallExpression@{MethodCallExpression}}
+\subsubsection[{setEntry}]{\setlength{\rightskip}{0pt plus 5cm}void MethodCallExpression::setEntry (ENTRY $\ast$ {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMethodCallExpression_a573fa44f50e5c3c55e0801d726ccf594}
+Set the symbol table ENTRY for this method
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]pointer to a new symbol table ENTRY representing the called method \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MethodCallExpression.h\item 
+MethodCallExpression.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+\hypertarget{classIfStatement}{
+\section{IfStatement Class Reference}
+\label{classIfStatement}\index{IfStatement@{IfStatement}}
+}
+
+
+This class represents a TinyJava IF statement.  
+
+
+{\ttfamily \#include $<$IfStmt.h$>$}Inheritance diagram for IfStatement::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classIfStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIfStatement_af99bd97270bb7f31932e9ccd3c85d9d3}{IfStatement} (int lno, \hyperlink{classExpression}{Expression} $\ast$e, \hyperlink{classStatement}{Statement} $\ast$ts, \hyperlink{classStatement}{Statement} $\ast$es)
+\item 
+\hyperlink{classExpression}{Expression} $\ast$ \hyperlink{classIfStatement_aa9a02bb22bf3f74c87fb979aa889d6b6}{getExpression} ()
+\item 
+\hyperlink{classStatement}{Statement} $\ast$ \hyperlink{classIfStatement_a77b917ab2b788e992f60ab5a1e56678b}{getThenStatement} ()
+\item 
+\hyperlink{classStatement}{Statement} $\ast$ \hyperlink{classIfStatement_a79a1c2c1a1d824c0160cdef2b9f87478}{getElseStatement} ()
+\item 
+void \hyperlink{classIfStatement_ab4c2cd2f1c924951d782493281d15249}{accept} (\hyperlink{classAstVisitor}{AstVisitor} $\ast$aVisitor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a TinyJava IF statement. An if statement is represented by:
+\begin{DoxyItemize}
+\item a control \hyperlink{classExpression}{Expression} representation
+\item a then \hyperlink{classStatement}{Statement} representation
+\item an else \hyperlink{classStatement}{Statement} representation, which may be NULL 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classIfStatement_af99bd97270bb7f31932e9ccd3c85d9d3}{
+\index{IfStatement@{IfStatement}!IfStatement@{IfStatement}}
+\index{IfStatement@{IfStatement}!IfStatement@{IfStatement}}
+\subsubsection[{IfStatement}]{\setlength{\rightskip}{0pt plus 5cm}IfStatement::IfStatement (int {\em lno}, \/  {\bf Expression} $\ast$ {\em e}, \/  {\bf Statement} $\ast$ {\em ts}, \/  {\bf Statement} $\ast$ {\em es})}}
+\label{classIfStatement_af99bd97270bb7f31932e9ccd3c85d9d3}
+Create a new \hyperlink{classIfStatement}{IfStatement} object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lno}]a source code line number with the if statement (should be the beginning of the if statement) \item[{\em e}]a pointer to the control \hyperlink{classExpression}{Expression} syntax tree \item[{\em ts}]a pointer to the THEN \hyperlink{classStatement}{Statement} syntax tree \item[{\em es}]a pointer to the ELSE \hyperlink{classStatement}{Statement} syntax tree, which may be NULL if the if statement has no ELSE part \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classAstException}{AstException}}]if either the e or ts argument is NULL \end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classIfStatement_ab4c2cd2f1c924951d782493281d15249}{
+\index{IfStatement@{IfStatement}!accept@{accept}}
+\index{accept@{accept}!IfStatement@{IfStatement}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void IfStatement::accept ({\bf AstVisitor} $\ast$ {\em aVisitor})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classIfStatement_ab4c2cd2f1c924951d782493281d15249}
+Accept a visitor to this node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em aVisitor}]is a visitor object of type \hyperlink{classAstVisitor}{AstVisitor}. \end{DoxyParams}
+
+
+Implements \hyperlink{classAstNode_a67b2d6ce1262da2954fb4db255759fb3}{AstNode}.\hypertarget{classIfStatement_a79a1c2c1a1d824c0160cdef2b9f87478}{
+\index{IfStatement@{IfStatement}!getElseStatement@{getElseStatement}}
+\index{getElseStatement@{getElseStatement}!IfStatement@{IfStatement}}
+\subsubsection[{getElseStatement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Statement}$\ast$ IfStatement::getElseStatement ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classIfStatement_a79a1c2c1a1d824c0160cdef2b9f87478}
+Return the ELSE statement of this if statement
+
+\begin{DoxyReturn}{Returns}
+pointer to a \hyperlink{classStatement}{Statement} representing the ELSE statement 
+\end{DoxyReturn}
+\hypertarget{classIfStatement_aa9a02bb22bf3f74c87fb979aa889d6b6}{
+\index{IfStatement@{IfStatement}!getExpression@{getExpression}}
+\index{getExpression@{getExpression}!IfStatement@{IfStatement}}
+\subsubsection[{getExpression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expression}$\ast$ IfStatement::getExpression ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classIfStatement_aa9a02bb22bf3f74c87fb979aa889d6b6}
+Return the control \hyperlink{classExpression}{Expression} of this if statement
+
+\begin{DoxyReturn}{Returns}
+pointer to an \hyperlink{classExpression}{Expression} representing the control expression 
+\end{DoxyReturn}
+\hypertarget{classIfStatement_a77b917ab2b788e992f60ab5a1e56678b}{
+\index{IfStatement@{IfStatement}!getThenStatement@{getThenStatement}}
+\index{getThenStatement@{getThenStatement}!IfStatement@{IfStatement}}
+\subsubsection[{getThenStatement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Statement}$\ast$ IfStatement::getThenStatement ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classIfStatement_a77b917ab2b788e992f60ab5a1e56678b}
+Return the THEN statement of this if statement
+
+\begin{DoxyReturn}{Returns}
+pointer to a \hyperlink{classStatement}{Statement} representing the THEN statement 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+IfStmt.h\item 
+IfStmt.cpp\end{DoxyCompactItemize}
