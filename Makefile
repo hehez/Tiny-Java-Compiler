@@ -1,3 +1,8 @@
+# @Time    : 4/23/17 1:29 AM
+# @Author  : hehez
+# @File    : Makefile
+# @Version : 1.0
+
 CXX		        = g++
 CPPFLAGS	    = -I/ast
 CXXFLAGS	    = -g
