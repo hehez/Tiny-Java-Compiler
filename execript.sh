@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# 810667011
-# hongfei yan
-#
 # A Simple Shell Script To Get jsm.txt And All *.class From Each Of It
 
 function genJsmTxt() {
